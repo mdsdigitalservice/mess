@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DJ Rogério Mess — Performance Sonora Premium</title>
+<meta name="description" content="DJ Rogério Mess — sets e mixagens para casamentos, eventos corporativos e clubs de alto padrão. Mato Grosso, Brasil.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23000'/%3E%3Cpath d='M4 20c4-10 8-10 12 0s8 10 12 0' fill='none' stroke='%23FF1818' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="DJ Rogério Mess">
+<meta property="og:title" content="DJ Rogério Mess — Performance Sonora Premium">
+<meta property="og:description" content="DJ Rogério Mess — sets e mixagens para casamentos, eventos corporativos e clubs de alto padrão. Mato Grosso, Brasil.">
+<meta property="og:image" content="rogerio-mess-dj/assets/hero-desktop.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DJ Rogério Mess — Performance Sonora Premium">
+<meta name="twitter:description" content="DJ Rogério Mess — sets e mixagens para casamentos, eventos corporativos e clubs de alto padrão. Mato Grosso, Brasil.">
+<meta name="twitter:image" content="rogerio-mess-dj/assets/hero-desktop.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS (exact from styleboard) ─────────────── */
+:root{
+  --bg-0:#000;--bg-1:#0A0A0B;--bg-2:#121214;--bg-3:#1A1A1D;
+  --fg:#fff;--fg-2:rgba(255,255,255,.55);--fg-3:rgba(255,255,255,.3);
+  --accent:#FF1818;--accent-press:#CC0000;--accent-tint:rgba(255,24,24,.12);
+  --live:#ECF74A;
+  --w-04:rgba(255,255,255,.04);--w-06:rgba(255,255,255,.06);
+  --w-08:rgba(255,255,255,.08);--w-16:rgba(255,255,255,.16);
+  --w-24:rgba(255,255,255,.24);--w-36:rgba(255,255,255,.36);
+  --glow-accent:0 0 0 1px rgba(255,24,24,.4),0 0 24px 2px rgba(255,24,24,.55),0 10px 40px -4px rgba(255,24,24,.6);
+  --glow-white:0 10px 44px -6px rgba(255,255,255,.28);
+  --r-xs:6px;--r-sm:10px;--r-md:16px;--r-pill:999px;
+  --dur-fast:150ms;--dur-med:300ms;--ease-out:cubic-bezier(.22,1,.36,1);
+  --blur-nav:blur(50px);
+  --font-display:'Space Grotesk',system-ui,sans-serif;
+  --font-sans:'Inter',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+  --max:1100px;
+}
+
+/* ── RESET ───────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-0);color:var(--fg);
+  font-family:var(--font-sans);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:none;background:none}
+svg{display:block}
+
+/* ── GRAIN OVERLAY ──────────────────────────────── */
+.grain{
+  position:fixed;inset:0;z-index:9990;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+  opacity:.032;mix-blend-mode:overlay;
+}
+
+/* ── LAYOUT ──────────────────────────────────────── */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+
+/* ── SCROLL REVEAL ───────────────────────────────── */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+.reveal.visible{opacity:1;transform:none}
+.reveal-d1{transition-delay:.1s}
+.reveal-d2{transition-delay:.2s}
+.reveal-d3{transition-delay:.3s}
+.reveal-d4{transition-delay:.4s}
+
+/* ── NAV ─────────────────────────────────────────── */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  height:64px;display:flex;align-items:center;
+  padding:0 32px;
+  background:#000000;
+  border-bottom:1px solid var(--w-08);
+  transition:background var(--dur-med),border-color var(--dur-med);
+}
+#nav.stuck{
+  background:#000000;
+  backdrop-filter:var(--blur-nav);
+  -webkit-backdrop-filter:var(--blur-nav);
+  border-bottom-color:var(--w-16);
+}
+.nav-inner{display:flex;align-items:center;gap:0;width:100%}
+.brand{
+  display:flex;align-items:center;gap:10px;
+  font-family:var(--font-display);font-weight:700;
+  text-transform:uppercase;letter-spacing:-.01em;font-size:1rem;
+  flex-shrink:0;
+}
+.brand-wave{width:28px;height:18px;color:var(--accent);flex-shrink:0}
+.nav-links{display:flex;gap:28px;list-style:none;margin:0 auto;padding:0}
+.nav-links a{
+  color:var(--fg-2);font-size:.9rem;font-weight:500;position:relative;
+  transition:color var(--dur-fast);padding-bottom:4px;
+}
+.nav-links a::after{
+  content:'';position:absolute;left:0;right:100%;bottom:-2px;
+  height:2px;background:var(--accent);
+  transition:right var(--dur-med) var(--ease-out);
+}
+.nav-links a:hover,
+.nav-links a.active{color:var(--fg)}
+.nav-links a:hover::after,
+.nav-links a.active::after{right:0}
+.nav-book{
+  flex-shrink:0;
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--font-sans);font-weight:600;font-size:.85rem;
+  background:#fff;color:#000;border-radius:var(--r-pill);padding:9px 20px;
+  transition:box-shadow var(--dur-med),transform var(--dur-fast) var(--ease-out);
+}
+.nav-book:hover{box-shadow:var(--glow-white);transform:translateY(-1px)}
+
+/* ── MOBILE PILL RAIL ────────────────────────────── */
+.mobrail{display:none}
+.mobrail a{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;text-decoration:none;
+}
+.mobrail a span{
+  font-family:var(--font-sans);font-size:.62rem;font-weight:600;letter-spacing:.04em;
+  text-transform:uppercase;color:inherit;pointer-events:none;line-height:1;
+}
+
+/* ── BTN ─────────────────────────────────────────── */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--font-sans);font-weight:600;font-size:.9rem;
+  border-radius:var(--r-pill);padding:12px 24px;
+  border:none;cursor:pointer;
+  transition:transform var(--dur-fast) var(--ease-out),box-shadow var(--dur-med),background var(--dur-med);
+}
+.btn:hover{transform:translateY(-1px)}
+.btn-accent{
+  background:rgba(255,24,24,.15);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,24,24,.45);
+  color:#fff;
+  box-shadow:0 4px 24px -2px rgba(255,24,24,.3);
+}
+.btn-accent:hover{
+  background:rgba(255,24,24,.25);
+  border-color:rgba(255,24,24,.75);
+  box-shadow:0 8px 32px 0 rgba(255,24,24,.5);
+}
+.btn-white{background:#fff;color:#000}
+.btn-white:hover{box-shadow:var(--glow-white)}
+.btn-ghost{
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  color:var(--fg);border:1px solid rgba(255,255,255,.2);
+}
+.btn-ghost:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.12)}
+
+/* ── KICKER ──────────────────────────────────────── */
+.kicker{
+  font-family:var(--font-mono);font-size:.75rem;
+  letter-spacing:.28em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:14px;display:inline-flex;align-items:center;gap:12px;
+}
+.kicker::before{content:"";width:34px;height:1px;background:var(--accent);display:inline-block}
+
+/* ── SECTION SHARED ──────────────────────────────── */
+.sec{padding:110px 0;border-bottom:1px solid var(--w-08)}
+.sec-alt{background:var(--bg-1)}
+.sec-label{
+  display:flex;align-items:baseline;gap:12px;margin-bottom:40px;
+}
+.sec-label .n{font-family:var(--font-mono);font-size:.75rem;color:var(--accent)}
+.sec-label h2{
+  font-family:var(--font-display);font-weight:500;
+  font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.01em;
+}
+.t-display{
+  font-family:var(--font-display);font-weight:700;
+  text-transform:uppercase;font-size:clamp(2.2rem,5.5vw,4rem);
+  line-height:.95;letter-spacing:-.03em;
+}
+.t-display em{font-style:normal;color:var(--accent)}
+.body-text{font-size:1rem;color:var(--fg-2);line-height:1.7}
+.body-text strong{color:var(--fg);font-weight:500}
+
+/* ── HERO ────────────────────────────────────────── */
+#hero{
+  min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  padding:0 0;position:relative;overflow:hidden;
+  background:
+    repeating-radial-gradient(circle at 22% 80%,var(--w-06) 0 1px,transparent 1px 40px),
+    url('rogerio-mess-dj/assets/backgrounds/hero-desktop.PNG') right bottom / contain no-repeat,
+    #000000;
+}
+#hero::before{
+  content:'';position:absolute;inset:-50%;
+  background:repeating-radial-gradient(circle at 50% 50%,rgba(255,24,24,.05) 0 1px,transparent 1px 80px);
+  animation:radar 8s linear infinite;
+  pointer-events:none;z-index:1;
+}
+#hero::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,#000000 12%,rgba(0,0,0,.55) 45%,transparent 80%);
+  pointer-events:none;z-index:0;
+}
+@keyframes radar{from{transform:scale(1)}to{transform:scale(1.25)}}
+.hero-inner{
+  position:relative;z-index:2;padding-top:100px;
+  max-width:680px;margin:0;width:100%;
+}
+.hero-h1{
+  font-family:var(--font-display);font-weight:700;
+  text-transform:uppercase;
+  font-size:clamp(2.8rem,7vw,5.6rem);
+  line-height:.92;letter-spacing:-.03em;
+  margin:14px 0 20px;max-width:14ch;
+}
+.hero-h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{
+  font-size:1rem;color:var(--fg-2);
+  max-width:420px;line-height:1.6;margin-bottom:40px;
+}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.hero-inner .kicker{opacity:0;transform:translateY(16px);animation:fadein .6s .1s var(--ease-out) forwards}
+.hero-h1{opacity:0;transform:translateY(20px);animation:fadein .7s .2s var(--ease-out) forwards}
+.hero-sub{opacity:0;transform:translateY(16px);animation:fadein .6s .35s var(--ease-out) forwards}
+.hero-ctas{opacity:0;transform:translateY(16px);animation:fadein .6s .5s var(--ease-out) forwards}
+.hero-wave{
+  display:flex;align-items:center;gap:14px;
+  margin-top:36px;margin-bottom:56px;
+  opacity:0;transform:translateY(16px);animation:fadein .6s .65s var(--ease-out) forwards;
+}
+.hero-wave canvas{width:340px;height:56px;display:block}
+.hero-wave .t{font-family:var(--font-mono);font-size:12px;color:var(--fg-2);font-variant-numeric:tabular-nums}
+@media(max-width:860px){
+  .hero-wave canvas{width:220px;height:44px}
+}
+@keyframes fadein{to{opacity:1;transform:none}}
+
+/* ── MARQUEE ─────────────────────────────────────── */
+.marquee{
+  border-top:1px solid var(--w-08);border-bottom:1px solid var(--w-08);
+  padding:20px 0;overflow:hidden;white-space:nowrap;background:var(--bg-1);
+}
+.marquee .track{display:inline-flex;gap:56px;animation:scroll 26s linear infinite}
+.marquee:hover .track{animation-play-state:paused}
+.marquee span{
+  font-family:var(--font-display);font-size:clamp(1.2rem,3vw,1.5rem);font-weight:700;letter-spacing:-.01em;color:var(--fg-2);
+  display:inline-flex;align-items:center;gap:56px;
+}
+.marquee span::after{content:"◆";color:var(--accent);font-size:11px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ── ABOUT ───────────────────────────────────────── */
+.about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center}
+.about-vis{
+  aspect-ratio:3/4;background:var(--bg-2);border-radius:var(--r-md);
+  border:1px solid var(--w-08);overflow:hidden;position:relative;
+}
+.about-vis img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.about-vis-fade{
+  position:absolute;bottom:0;left:0;right:0;height:40%;
+  background:linear-gradient(to top,rgba(10,10,11,.95),transparent);
+}
+.about-quote{
+  margin-top:28px;padding-top:20px;border-top:1px solid var(--w-08);
+  font-size:.95rem;color:var(--fg-2);font-style:italic;line-height:1.7;
+}
+
+/* ── SERVICES ────────────────────────────────────── */
+#services{
+  background:
+    linear-gradient(rgba(10,11,14,.72),rgba(10,11,14,.82)),
+    url('rogerio-mess-dj/assets/backgrounds/bg-card1.webp') center / cover no-repeat !important;
+  position:relative;
+}
+.svc-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.svc-card{
+  padding:42px 32px;position:relative;
+  background:transparent;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--r-md);
+  transition:all var(--dur-med) var(--ease-out);
+  box-shadow:0 8px 32px 0 rgba(0,0,0,.4);
+  overflow:hidden;
+}
+.svc-card::before{
+  content:'';position:absolute;top:0;left:50%;
+  transform:translateX(-50%);
+  width:42%;height:2px;
+  background:var(--accent);
+  box-shadow:0 0 10px rgba(255,24,24,.85);
+  transition:width var(--dur-med) var(--ease-out),box-shadow var(--dur-med);
+}
+.svc-card:hover{
+  background:rgba(255,255,255,.05);
+  border-color:rgba(255,24,24,.45);
+  box-shadow:0 12px 40px 0 rgba(255,24,24,.22);
+  transform:translateY(-4px);
+}
+.svc-card:hover::before{width:65%;box-shadow:0 0 16px rgba(255,24,24,1)}
+.svc-icon{width:36px;height:36px;color:rgba(255,255,255,.2);margin-bottom:24px}
+.svc-tag{font-family:var(--font-mono);font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3);margin-bottom:10px}
+.svc-h{
+  font-family:var(--font-display);font-weight:500;font-size:1.15rem;
+  letter-spacing:-.01em;line-height:1.25;margin-bottom:14px;
+}
+.svc-body{font-size:.9rem;color:var(--fg-2);line-height:1.7;margin-bottom:28px}
+.svc-cta{
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:.8rem;font-weight:600;letter-spacing:.04em;color:var(--accent);
+  transition:gap var(--dur-fast) var(--ease-out);
+}
+.svc-cta:hover{gap:12px}
+
+/* ── PLAYER ──────────────────────────────────────── */
+.player-wrap{
+  background:var(--bg-2);border:1px solid var(--w-08);
+  border-radius:var(--r-md);overflow:hidden;
+}
+.player-head{
+  display:flex;align-items:center;gap:20px;
+  padding:28px 28px 0;
+}
+.pbtn{
+  width:52px;height:52px;border-radius:50%;
+  background:var(--accent);color:#fff;
+  display:grid;place-items:center;flex-shrink:0;
+  transition:transform var(--dur-fast) var(--ease-out),box-shadow var(--dur-med);
+}
+.pbtn:hover{transform:scale(1.06)}
+.pbtn.playing{box-shadow:var(--glow-accent);animation:pbglow 2.4s ease-in-out infinite}
+@keyframes pbglow{
+  0%,100%{box-shadow:0 0 0 1px rgba(255,24,24,.4),0 0 20px 2px rgba(255,24,24,.5),0 10px 40px -4px rgba(255,24,24,.55)}
+  50%{box-shadow:0 0 0 5px rgba(255,24,24,.2),0 0 36px 6px rgba(255,24,24,.65),0 16px 50px -2px rgba(255,24,24,.7)}
+}
+.pbtn .spin{
+  width:44%;height:44%;border-radius:50%;
+  border:2px solid rgba(255,255,255,.3);border-top-color:#fff;
+  display:none;animation:spin .7s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ph-meta{flex:1;min-width:0}
+.ph-title{
+  font-family:var(--font-display);font-weight:500;font-size:1.1rem;
+  margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.ph-sub{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3)}
+.timecode{
+  font-family:var(--font-mono);font-size:.82rem;
+  font-variant-numeric:tabular-nums;color:var(--fg-2);
+  flex-shrink:0;min-width:100px;text-align:right;white-space:nowrap;
+}
+.timecode .cur{color:var(--accent)}
+.wave-area{padding:16px 28px 0;cursor:pointer}
+.wave{display:flex;align-items:center;gap:2px;height:44px;overflow:hidden}
+.bar{
+  flex-shrink:0;width:3px;background:var(--w-08);border-radius:2px;
+  transition:background .05s;
+}
+.bar.played{background:var(--accent)}
+.bar.head{background:var(--accent);opacity:.7}
+.cat-tabs{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;margin-bottom:24px;padding:0;
+}
+.cat-card-item{
+  padding:15px 18px;
+  background:rgba(255,255,255,.04);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--r-md);
+  cursor:pointer;position:relative;
+  transition:all var(--dur-med) var(--ease-out);
+  display:flex;flex-direction:column;gap:6px;
+  text-align:left;
+}
+.cat-card-item::before{
+  content:'';position:absolute;top:0;left:50%;
+  transform:translateX(-50%);
+  width:36%;height:2px;
+  background:var(--accent);
+  opacity:0;transition:all var(--dur-med) var(--ease-out);
+}
+.cat-card-item:hover{
+  background:rgba(255,255,255,.08);
+  border-color:rgba(255,255,255,.28);
+  transform:translateY(-3px);
+}
+.cat-card-item.active{
+  background:rgba(227,30,36,.14);
+  border-color:rgba(227,30,36,.7);
+  box-shadow:0 12px 32px -4px rgba(227,30,36,.3);
+}
+.cat-card-item.active::before{opacity:1;width:60%;box-shadow:0 0 12px rgba(227,30,36,1)}
+.cat-card-top{display:flex;align-items:center;justify-content:space-between}
+.cat-card-tag{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.1em;color:var(--fg-3);text-transform:uppercase}
+.cat-card-count{font-family:var(--font-mono);font-size:.7rem;font-weight:600;padding:3px 9px;border-radius:12px;background:rgba(255,255,255,.08);color:var(--fg)}
+.cat-card-item.active .cat-card-count{background:var(--accent);color:#fff}
+.cat-card-symbol{display:none}
+.cat-card-short{display:none}
+.cat-card-label{font-family:var(--font-display);font-weight:600;font-size:1.1rem;color:var(--fg)}
+.cat-card-blurb{font-size:.78rem;color:var(--fg-3);line-height:1.4}
+@media (max-width:860px){
+  .cat-tabs{
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;margin-bottom:20px;
+  }
+  .cat-card-item{
+    padding:12px 10px;
+    align-items:center;
+    text-align:center;
+    gap:4px;
+    border-radius:14px;
+    aspect-ratio:1 / 1;
+    justify-content:center;
+  }
+  .cat-card-top{
+    width:100%;
+    justify-content:space-between;
+    margin-bottom:2px;
+  }
+  .cat-card-tag{
+    font-size:.58rem;
+    letter-spacing:0;
+  }
+  .cat-card-count{
+    font-size:.62rem;
+    padding:1px 6px;
+  }
+  .cat-card-symbol{
+    display:block;
+    font-family:var(--font-display);
+    font-size:1.75rem;
+    font-weight:800;
+    line-height:1.1;
+    color:var(--fg);
+    letter-spacing:-.02em;
+    margin:auto 0;
+  }
+  .cat-card-item.active .cat-card-symbol{
+    color:var(--accent);
+    text-shadow:0 0 16px rgba(227,30,36,.6);
+  }
+  .cat-card-short{
+    display:block;
+    font-size:.66rem;
+    font-weight:600;
+    color:var(--fg-2);
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    max-width:100%;
+  }
+  .cat-card-label{display:none}
+  .cat-card-blurb{display:none}
+}
+.cat-blurb{display:none}
+.tlist{margin-top:16px;max-height:440px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--w-16) transparent}
+.tlist::-webkit-scrollbar{width:8px}
+.tlist::-webkit-scrollbar-thumb{background:var(--w-08);border-radius:8px}
+.tlist::-webkit-scrollbar-thumb:hover{background:var(--w-16)}
+.trow{
+  display:grid;
+  grid-template-columns:40px 1fr auto auto;
+  align-items:center;gap:16px;padding:13px 28px;
+  cursor:pointer;border-top:1px solid var(--w-08);
+  transition:background var(--dur-fast);
+}
+.trow:hover{background:var(--w-04)}
+.trow.active{background:var(--accent-tint);box-shadow:inset 3px 0 0 var(--accent)}
+.trow .idx{font-family:var(--font-mono);font-size:.8rem;color:var(--fg-3);text-align:center;font-variant-numeric:tabular-nums}
+.trow.active .idx{color:var(--accent)}
+.mini-bars{display:none;align-items:flex-end;justify-content:center;gap:2px;height:14px}
+.trow.active .mini-bars{display:flex}
+.trow.active .idx-n{display:none}
+.mini-bar{width:3px;background:var(--accent);border-radius:1px;animation:mdance .65s ease-in-out infinite alternate}
+.mini-bar:nth-child(2){animation-delay:.11s}
+.mini-bar:nth-child(3){animation-delay:.22s}
+@keyframes mdance{from{height:3px}to{height:14px}}
+.tp{font-family:var(--font-display);font-weight:400;font-size:.95rem;display:flex;align-items:center;gap:10px;min-width:0}
+.tp-t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.chip-g{flex-shrink:0}
+.trow.active .tp{color:var(--accent)}
+.chip-g{
+  font-family:var(--font-mono);font-size:.65rem;text-transform:uppercase;
+  letter-spacing:.06em;color:var(--fg-3);
+  background:var(--w-04);border-radius:var(--r-xs);padding:4px 8px;
+}
+.trow.active .chip-g{color:var(--accent);background:var(--accent-tint)}
+.td{font-family:var(--font-mono);font-size:.78rem;color:var(--fg-2);font-variant-numeric:tabular-nums;text-align:right}
+.td.bpm{color:var(--fg-3);text-align:left;min-width:66px}
+.bpm-n{color:var(--fg-2)}
+.trow.active .bpm-n{color:var(--live)}
+
+/* ── AGENDA ──────────────────────────────────────── */
+.ag-band{display:flex;align-items:center;justify-content:space-between;gap:60px}
+.ag-stats{display:flex;margin-top:32px;border:1px solid var(--w-08);border-radius:var(--r-sm);overflow:hidden}
+.ag-s{padding:14px 24px;border-right:1px solid var(--w-08)}
+.ag-s:last-child{border-right:none}
+.ag-v{font-family:var(--font-mono);font-size:1.3rem;font-weight:700;color:var(--accent);letter-spacing:.04em}
+.ag-l{font-family:var(--font-mono);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-3);margin-top:2px}
+
+/* ── CONTACT ─────────────────────────────────────── */
+.ct-sec{
+  padding:160px 0;text-align:center;
+  background:
+    repeating-radial-gradient(circle at 50% 50%,rgba(255,24,24,.04) 0 1px,transparent 1px 60px),
+    linear-gradient(rgba(0,0,0,.74),rgba(0,0,0,.74)),
+    url('rogerio-mess-dj/assets/cards/colete-3x4.webp') center center / cover;
+  background-attachment:scroll,scroll,fixed;
+  position:relative;
+}
+@media(hover:none){
+  .ct-sec{background-attachment:scroll,scroll,scroll}
+}
+.ct-h{
+  font-family:var(--font-display);font-weight:700;text-transform:uppercase;
+  font-size:clamp(2.2rem,5.5vw,4.4rem);
+  line-height:.95;letter-spacing:-.03em;margin-bottom:18px;text-wrap:balance;
+}
+.ct-h em{font-style:normal;color:var(--accent)}
+.ct-sub{font-size:1rem;color:var(--fg-2);margin-bottom:44px}
+.ct-actions{display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap}
+
+/* ── FOOTER ──────────────────────────────────────── */
+footer{border-top:1px solid var(--w-08);padding:32px 0;background:var(--bg-1)}
+.ft-row{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.ft-brand{display:flex;align-items:center;gap:9px;font-family:var(--font-display);font-weight:700;text-transform:uppercase;font-size:.9rem;letter-spacing:-.01em}
+.ft-wave{width:22px;height:14px;color:var(--accent)}
+.ft-copy{font-family:var(--font-mono);font-size:.7rem;color:var(--fg-3);letter-spacing:.06em}
+.ft-links{display:flex;gap:20px}
+.ft-links a{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-3);transition:color var(--dur-fast)}
+.ft-links a:hover{color:var(--fg-2)}
+
+/* ── PARALLAX BACKGROUNDS ────────────────────────── */
+/*  gradient (scroll) layered over image (fixed)       */
+#about{
+  background:
+    linear-gradient(to right,rgba(0,0,0,.72) 0%,rgba(0,0,0,.42) 100%),
+    url('rogerio-mess-dj/assets/backgrounds/bg-ghost-couro-terco.webp') left center / cover;
+  background-attachment:scroll,fixed;
+}
+#services{
+  background:
+    linear-gradient(rgba(10,10,11,.82),rgba(10,10,11,.82)),
+    url('rogerio-mess-dj/assets/cards/couro-terco-3x4.webp') right center / cover;
+  background-attachment:scroll,fixed;
+}
+#sets{
+  background:
+    linear-gradient(rgba(0,0,0,.68),rgba(0,0,0,.68)),
+    url('rogerio-mess-dj/assets/backgrounds/bg-waveform.webp') center center / cover;
+  background-attachment:scroll,fixed;
+}
+#agenda{
+  background:
+    linear-gradient(rgba(10,10,11,.76),rgba(10,10,11,.76)),
+    url('rogerio-mess-dj/assets/cards/corpo-inteiro-16x9.webp') left center / cover;
+  background-attachment:scroll,fixed;
+}
+/* iOS Safari ignora fixed em elementos não-body — desativa para touch */
+@media(hover:none){
+  #about,#services,#sets,#agenda{background-attachment:scroll,scroll}
+}
+
+/* ── RESPONSIVE ──────────────────────────────────── */
+@media(max-width:860px){
+  #hero{
+    background:
+      repeating-radial-gradient(circle at 50% 20%,var(--w-06) 0 1px,transparent 1px 40px),
+      url('rogerio-mess-dj/assets/hero-mobile.webp') center top / cover no-repeat,
+      #000000;
+  }
+  #nav{padding:0 16px;height:58px}
+  .nav-inner{justify-content:space-between;width:100%}
+  .brand img{height:18px!important;max-width:175px;width:auto!important;object-fit:contain}
+  .nav-links{display:none}
+  .nav-book{padding:7px 14px;font-size:.78rem}
+  .hero-ctas{
+    display:flex!important;
+    flex-direction:row!important;
+    flex-wrap:nowrap!important;
+    align-items:center;
+    justify-content:flex-start;
+    gap:8px!important;
+    width:100%;
+  }
+  .hero-ctas .btn{
+    flex:1 1 auto;
+    justify-content:center;
+    padding:11px 12px!important;
+    font-size:.82rem!important;
+    white-space:nowrap;
+    gap:6px!important;
+  }
+  .hero-ctas .btn svg{width:14px!important;height:14px!important;flex-shrink:0}
+  body{padding-bottom:88px}
+  .mobrail{
+    display:flex;position:fixed;z-index:950;
+    left:50%;transform:translateX(-50%);bottom:18px;
+    gap:6px;padding:6px 10px;
+    background:rgba(12,13,16,.85);
+    backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--r-pill);
+    box-shadow:0 16px 40px -6px rgba(0,0,0,.9),0 0 20px rgba(227,30,36,.12);
+  }
+  .mobrail a{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    width:62px;height:52px;gap:4px;
+    border-radius:24px;color:rgba(255,255,255,.65);
+    transition:all var(--dur-med) var(--ease-out);
+  }
+  .mobrail a svg{width:20px;height:20px;transition:transform var(--dur-fast)}
+  .mobrail a span{
+    position:static;transform:none;
+    font-family:var(--font-sans);font-size:.62rem;font-weight:600;
+    letter-spacing:.04em;text-transform:uppercase;color:inherit;opacity:1;
+    pointer-events:none;line-height:1;
+  }
+  .mobrail a:hover{color:#fff;background:rgba(255,255,255,.06)}
+  .mobrail a.active{
+    color:#fff;
+    background:linear-gradient(135deg,rgba(227,30,36,.92),rgba(190,20,20,.95));
+    box-shadow:0 4px 18px rgba(227,30,36,.45);
+  }
+  .mobrail a.active svg{transform:scale(1.08)}
+  .mobrail a:active{transform:scale(.94)}
+  .sec{padding:80px 0}
+  .wrap{padding:0 20px}
+  .about-grid{grid-template-columns:1fr;gap:44px}
+  .about-vis{aspect-ratio:3/2}
+  .svc-grid{grid-template-columns:1fr;gap:20px}
+  .svc-card{border:1px solid rgba(255,255,255,.14)}
+  .trow{padding:12px 20px;gap:10px;grid-template-columns:32px 1fr auto}
+  .td.bpm{display:none}
+  .ag-band{flex-direction:column}
+  .ct-sec{padding:100px 0}
+  .ft-row{flex-direction:column;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){
+  *{
+    animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+  .hero-inner .kicker,.hero-h1,.hero-sub,.hero-ctas,.hero-wave,.reveal{
+    opacity:1!important;transform:none!important;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="brand">
+      <img src="rogerio-mess-dj/assets/logo-mess.png" alt="DJ Rogério Mess" height="28" style="display:block;height:28px;width:auto">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">Sobre</a></li>
+      <li><a href="#services">Serviços</a></li>
+      <li><a href="#sets">Sets</a></li>
+      <li><a href="#agenda">Agenda</a></li>
+    </ul>
+    <a href="https://api.whatsapp.com/send?phone=5565996226120&text=Quero%20agendar%20uma%20data%20para%20meu%20evento!" target="_blank" rel="noopener" class="nav-book">Booking</a>
+  </div>
+</nav>
+
+<nav class="mobrail" aria-label="Navegação">
+  <a href="#hero" data-sec="hero" class="active" aria-label="Início">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
+    <span>Início</span>
+  </a>
+  <a href="#about" data-sec="about" aria-label="Sobre">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+    <span>Sobre</span>
+  </a>
+  <a href="#sets" data-sec="sets" aria-label="Sets">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="14" x2="4" y2="10"/><line x1="9" y1="18" x2="9" y2="6"/><line x1="14" y1="16" x2="14" y2="8"/><line x1="19" y1="13" x2="19" y2="11"/></svg>
+    <span>Sets</span>
+  </a>
+  <a href="#contact" data-sec="contact" aria-label="Contato">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <span>Contato</span>
+  </a>
+</nav>
+
+<section id="hero">
+  <div class="wrap hero-inner">
+    <span class="kicker">DJ · OPEN FORMAT</span>
+    <h1 class="hero-h1">A noite certa<br>começa <em>no set.</em></h1>
+    <div class="hero-ctas">
+      <a href="https://api.whatsapp.com/send?phone=5565996226120&text=Quero%20agendar%20uma%20data%20para%20meu%20evento!" target="_blank" rel="noopener" class="btn btn-accent">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Entre em contato
+      </a>
+      <a href="#sets" class="btn btn-ghost">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+        Ouvir Sets
+      </a>
+    </div>
+    <div class="hero-wave">
+      <canvas id="eq" width="680" height="112"></canvas>
+      <span class="t" id="time">00:00 / 58:24</span>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-label="Especialidades e Estilos">
+  <div class="track">
+    <span>PRIVATE</span><span>HOUSE</span><span>OPEN FORMAT</span><span>WEDDINGS</span><span>CLUB</span><span>WARM-UP</span>
+    <span>PRIVATE</span><span>HOUSE</span><span>OPEN FORMAT</span><span>WEDDINGS</span><span>CLUB</span><span>WARM-UP</span>
+    <span>PRIVATE</span><span>HOUSE</span><span>OPEN FORMAT</span><span>WEDDINGS</span><span>CLUB</span><span>WARM-UP</span>
+    <span>PRIVATE</span><span>HOUSE</span><span>OPEN FORMAT</span><span>WEDDINGS</span><span>CLUB</span><span>WARM-UP</span>
+  </div>
+</div>
+
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="sec-label reveal">
+      <span class="n">01</span>
+      <h2>Sobre o DJ</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-vis reveal reveal-d1">
+        <img src="imagens/sobre.jpeg" alt="DJ Rogério Mess — sobre" loading="lazy">
+        <div class="about-vis-fade"></div>
+      </div>
+      <div class="reveal reveal-d2">
+        <span class="kicker">DJ · Performance Sonora Premium</span>
+        <h2 class="t-display" style="margin-bottom:20px">Não é só música.<br>É a leitura<br><em>do ambiente.</em></h2>
+        <p class="body-text">Por trás de cada set há horas de preparação, precisão técnica e <strong>sensibilidade para o momento</strong>. Rogério Mess lê a sala — antecipa o que o público precisa antes de pedir. Do primeiro acorde à última faixa, cada transição é intencional.</p>
+        <p class="about-quote">Sets para quem entende que a trilha sonora define a memória do evento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-alt" id="services">
+  <div class="wrap">
+    <div class="sec-label reveal">
+      <span class="n">02</span>
+      <h2>Para cada ocasião, um set sob medida.</h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal reveal-d1">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <div class="svc-tag">Casamentos & Cerimônias</div>
+        <h3 class="svc-h">A trilha sonora que ela vai lembrar para sempre.</h3>
+        <p class="svc-body">Da cerimônia ao after, cada momento com a sonoridade exata — romântica, emocional ou dançante, quando chegar a hora.</p>
+        <a href="https://api.whatsapp.com/send?phone=5565996226120&text=Quero%20agendar%20uma%20data%20para%20meu%20evento!" target="_blank" rel="noopener" class="svc-cta">
+          Verificar disponibilidade
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+      <div class="svc-card reveal reveal-d2">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+          <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+        </svg>
+        <div class="svc-tag">Corporate & Brand Events</div>
+        <h3 class="svc-h">Identidade sonora premium para a sua marca.</h3>
+        <p class="svc-body">Grooves sofisticados e batidas modernas com uma execução impecável. O clima ideal que conecta networking de alto nível e entretenimento, sempre mantendo a classe.</p>
+        <a href="https://api.whatsapp.com/send?phone=5565996226120&text=Quero%20agendar%20uma%20data%20para%20meu%20evento!" target="_blank" rel="noopener" class="svc-cta">
+          Verificar disponibilidade
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+      <div class="svc-card reveal reveal-d3">
+        <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true">
+          <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+        </svg>
+        <div class="svc-tag">Private Parties & Eventos Exclusivos</div>
+        <h3 class="svc-h">Vibe intensa e pista dominada.</h3>
+        <p class="svc-body">Mixagens precisas, dinâmica de som envolvente e leitura rápida de público. Uma entrega musical de altíssimo nível para quem consome música de verdade e exige uma festa premium.</p>
+        <a href="https://api.whatsapp.com/send?phone=5565996226120&text=Quero%20agendar%20uma%20data%20para%20meu%20evento!" target="_blank" rel="noopener" class="svc-cta">
+          Verificar disponibilidade
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sets">
+  <div class="wrap">
+    <div class="sec-label reveal">
+      <span class="n">03</span>
+      <h2>Ouça antes de decidir.</h2>
+    </div>
+    <p class="body-text reveal" style="margin-bottom:40px;max-width:520px">Quase 100 sets, três universos: <strong>Sertanejo &amp; Pagode</strong>, <strong>House</strong> e <strong>FlashBack's</strong>. Escolha a vibe que combina com o seu evento.</p>
+    <div class="cat-tabs reveal" id="catTabs" role="tablist" aria-label="Categorias de sets" style="margin-bottom:24px;padding:0;"></div>
+    <div class="player-wrap reveal reveal-d1" id="playerWrap">
+      <div class="player-head">
+        <button class="pbtn" id="pbtn" aria-label="Play">
+          <svg id="pico" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+          <div class="spin" id="spin"></div>
+        </button>
+        <div class="ph-meta">
+          <div class="ph-title" id="phTitle">Selecione um set</div>
+          <div class="ph-sub" id="phSub">Rogério Mess</div>
+        </div>
+        <div class="timecode"><span class="cur" id="pCur">0:00</span> / <span id="pTot">–:––</span></div>
+      </div>
+      <div class="wave-area" id="waveArea">
+        <div class="wave" id="wave" role="slider" aria-label="Progresso de reprodução" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+      </div>
+      <div class="tlist" id="tlist"></div>
+    </div>
+    <a href="https://soundcloud.com/rogerio-mess" target="_blank" rel="noopener" class="svc-cta reveal reveal-d2" style="margin-top:28px">
+      Arquivo completo — 200+ sets no SoundCloud
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <audio id="aud" preload="none"></audio>
+  </div>
+</section>
+
+<section class="sec sec-alt" id="agenda">
+  <div class="wrap">
+    <div class="ag-band">
+      <div>
+        <div class="sec-label reveal"><span class="n">04</span><h2>Agenda com vagas limitadas.</h2></div>
+        <p class="body-text reveal reveal-d1" style="max-width:420px">Datas disputadas. Reserve com antecedência para garantir a sua.</p>
+        <div class="ag-stats reveal reveal-d2">
+          <div class="ag-s"><div class="ag-v">MT</div><div class="ag-l">Mato Grosso</div></div>
+          <div class="ag-s"><div class="ag-v">BR</div><div class="ag-l">Todo o Brasil</div></div>
+          <div class="ag-s"><div class="ag-v">–</div><div class="ag-l">Sob Consulta</div></div>
+        </div>
+      </div>
+      <a href="https://api.whatsapp.com/send?phone=5565996226120&text=Quero%20agendar%20uma%20data%20para%20meu%20evento!" target="_blank" rel="noopener" class="btn btn-accent reveal reveal-d3" style="font-size:1rem;padding:14px 30px;flex-shrink:0">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Verificar disponibilidade
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="ct-sec" id="contact">
+  <div class="wrap" style="position:relative;z-index:1">
+    <span class="kicker reveal" style="display:block;margin-bottom:14px">Contato</span>
+    <h2 class="ct-h reveal reveal-d1">Seu evento merece<br>um set <em>à altura.</em></h2>
+    <p class="ct-sub reveal reveal-d2">Fale diretamente com Rogério. Orçamento personalizado, sem compromisso.</p>
+    <div class="ct-actions reveal reveal-d3">
+      <a href="https://api.whatsapp.com/send?phone=5565996226120&text=Quero%20agendar%20uma%20data%20para%20meu%20evento!" target="_blank" rel="noopener" class="btn btn-accent" style="font-size:1rem;padding:14px 30px">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Entre em contato via WhatsApp
+      </a>
+      <a href="https://www.instagram.com/rogeriomess/" target="_blank" rel="noopener" class="btn btn-ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @rogeriomess
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-row">
+      <div class="ft-brand">
+        <svg class="ft-wave" viewBox="0 0 28 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M1 9 C4 3 7 3 10 9 C13 15 16 15 19 9 C22 3 25 3 28 9"/>
+        </svg>
+        Rogério Mess
+      </div>
+      <div class="ft-copy">Mato Grosso · Brasil · Atende todo o país.</div>
+      <div class="ft-links">
+        <a href="https://www.instagram.com/rogeriomess/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://soundcloud.com/rogerio-mess" target="_blank" rel="noopener">SoundCloud</a>
+        <a href="https://www.facebook.com/cbarogeriomess" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://api.whatsapp.com/send?phone=5565996226120&text=Quero%20agendar%20uma%20data%20para%20meu%20evento!" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('stuck',scrollY>60);
+},{passive:true});
+
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* scrollspy: highlight current section in nav + mobile rail */
+const spySecs=[...document.querySelectorAll('section[id]')];
+const navA=[...document.querySelectorAll('.nav-links a')];
+const railA=[...document.querySelectorAll('.mobrail a')];
+function spy(){
+  const y=scrollY+window.innerHeight*0.35;
+  let id=spySecs[0].id;
+  for(const s of spySecs){if(s.offsetTop<=y)id=s.id;}
+  navA.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+id));
+  railA.forEach(a=>a.classList.toggle('active',a.dataset.sec===id));
+}
+window.addEventListener('scroll',spy,{passive:true});
+spy();
+
+const aud=document.getElementById('aud');
+const pbtn=document.getElementById('pbtn');
+const pico=document.getElementById('pico');
+const phTitle=document.getElementById('phTitle');
+const phSub=document.getElementById('phSub');
+const pCur=document.getElementById('pCur');
+const pTot=document.getElementById('pTot');
+const waveEl=document.getElementById('wave');
+const tlist=document.getElementById('tlist');
+const catTabs=document.getElementById('catTabs');
+const catBlurb=document.getElementById('catBlurb');
+
+let DATA=null,secIdx=0,cur=null,playing=false,prog=0,simT=null;
+const SIM_SECS=24; // prévia rápida (sem áudio real ainda) — varredura completa em ~24s
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const curSecs=()=>cur&&cur.secs?cur.secs:SIM_SECS;
+const chipFor=(t,sec)=>((t.tags||[]).find(x=>!/^\d/.test(x))||sec.short);
+
+const N=80;
+const BH=Array.from({length:N},()=>Math.round(10+Math.random()*90));
+waveEl.innerHTML=BH.map((h,i)=>`<div class="bar" id="b${i}" style="height:${h}%"></div>`).join('');
+document.getElementById('waveArea').addEventListener('click',e=>{
+  if(!cur)return;
+  const r=waveEl.getBoundingClientRect();
+  setProgress(Math.max(0,Math.min(1,(e.clientX-r.left)/r.width)));
+});
+
+fetch('rogerio-mess-dj/data/sets.json')
+  .then(r=>r.json())
+  .then(d=>{DATA=d;renderTabs();selectSection(0);})
+  .catch(()=>{tlist.innerHTML='<div style="padding:24px 28px;color:var(--fg-3)">Não foi possível carregar os sets.</div>';});
+
+function renderTabs(){
+  const SYM = ['SP', 'HS', 'FB'];
+  catTabs.innerHTML=DATA.sections.map((s,i)=>
+    `<div class="cat-card-item${i===0?' active':''}" role="tab" tabindex="0" data-i="${i}" aria-selected="${i===0}">
+       <div class="cat-card-top">
+         <span class="cat-card-tag">0${i+1}</span>
+         <span class="cat-card-count">${s.count}</span>
+       </div>
+       <div class="cat-card-symbol">${SYM[i] || s.short.slice(0,2).toUpperCase()}</div>
+       <div class="cat-card-label">${esc(s.label)}</div>
+       <div class="cat-card-short">${esc(s.short)}</div>
+       <div class="cat-card-blurb">${esc(s.blurb)}</div>
+     </div>`
+  ).join('');
+  catTabs.querySelectorAll('.cat-card-item').forEach(b=>{
+    b.addEventListener('click',()=>selectSection(+b.dataset.i, true));
+    b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectSection(+b.dataset.i, true);}});
+  });
+}
+
+function selectSection(i, fromClick){
+  secIdx=i;
+  const sec=DATA.sections[i];
+  catTabs.querySelectorAll('.cat-card-item').forEach((b,j)=>{b.classList.toggle('active',j===i);b.setAttribute('aria-selected',j===i);});
+  if(catBlurb) catBlurb.style.display='none';
+  tlist.scrollTop=0;
+  tlist.innerHTML=sec.tracks.map((t,j)=>{
+    const active=cur&&cur.id===t.id;
+    return `
+<div class="trow${active?' active':''}" data-i="${j}" tabindex="0" role="button" aria-label="${esc(t.title)}">
+  <div class="idx">
+    <span class="idx-n">${j+1}</span>
+    <div class="mini-bars" aria-hidden="true"><div class="mini-bar"></div><div class="mini-bar"></div><div class="mini-bar"></div></div>
+  </div>
+  <div class="tp"><span class="tp-t">${esc(t.title)}</span><span class="chip-g">${esc(chipFor(t,sec))}</span></div>
+  <div class="td bpm">${t.bpm?`<span class="bpm-n">${t.bpm}</span> BPM`:'—'}</div>
+  <div class="td">${t.dur||'—'}</div>
+</div>`;
+  }).join('');
+  tlist.querySelectorAll('.trow').forEach(r=>{
+    const j=+r.dataset.i;
+    r.addEventListener('click',()=>loadTrack(sec.tracks[j],true));
+    r.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();loadTrack(sec.tracks[j],true);}});
+  });
+  if(sec.tracks && sec.tracks.length > 0 && !playing){
+    loadTrack(sec.tracks[0], false);
+  }
+  if(fromClick){
+    const pw = document.getElementById('playerWrap');
+    if(pw){
+      const rect = pw.getBoundingClientRect();
+      if(rect.top > window.innerHeight * 0.65 || rect.top < 40){
+        pw.scrollIntoView({behavior:'smooth', block:'nearest'});
+      }
+    }
+  }
+}
+
+function markActiveRow(){
+  tlist.querySelectorAll('.trow').forEach(r=>{
+    const t=DATA.sections[secIdx].tracks[+r.dataset.i];
+    r.classList.toggle('active',!!(cur&&t&&t.id===cur.id));
+  });
+}
+
+function fmt(s){s=Math.floor(s);const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sc=s%60;return h>0?`${h}:${String(m).padStart(2,'0')}:${String(sc).padStart(2,'0')}`:`${m}:${String(sc).padStart(2,'0')}`;}
+
+function setProgress(p){
+  prog=p;
+  const head=Math.floor(p*N);
+  for(let i=0;i<N;i++){const b=document.getElementById('b'+i);b.classList.remove('played','head');if(i<head)b.classList.add('played');else if(i===head)b.classList.add('head');}
+  waveEl.setAttribute('aria-valuenow',Math.round(p*100));
+  pCur.textContent=fmt(p*curSecs());
+}
+
+function setPlayState(p){
+  playing=p;
+  pbtn.classList.toggle('playing',p);
+  pbtn.setAttribute('aria-label',p?'Pausar':'Play');
+  pico.innerHTML=p
+    ?'<rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/>'
+    :'<polygon points="6 3 20 12 6 21 6 3"/>';
+}
+
+function loadTrack(t,autoplay){
+  cur=t;prog=0;
+  phTitle.textContent=t.title;
+  phSub.textContent=(t.tags&&t.tags.length?t.tags.slice(0,2).join(' · '):'Set')+(t.src?'':' · Prévia')+' · Rogério Mess';
+  pTot.textContent=t.dur||fmt(SIM_SECS);
+  setProgress(0);
+  markActiveRow();
+  clearInterval(simT);
+  if(t.src){aud.src=t.src;if(autoplay)aud.play().catch(()=>{});setPlayState(!!autoplay);}
+  else{setPlayState(!!autoplay);if(autoplay)startSim();}
+}
+
+function startSim(){
+  clearInterval(simT);
+  simT=setInterval(()=>{
+    if(!playing){clearInterval(simT);return;}
+    prog=Math.min(prog+1/(curSecs()*10),1);
+    setProgress(prog);
+    if(prog>=1){setPlayState(false);clearInterval(simT);prog=0;}
+  },100);
+}
+
+pbtn.addEventListener('click',()=>{
+  if(!cur){const first=DATA&&DATA.sections[secIdx].tracks[0];if(first)loadTrack(first,true);return;}
+  if(cur.src){playing?aud.pause():aud.play().catch(()=>{});setPlayState(!playing);}
+  else{setPlayState(!playing);if(playing)startSim();else clearInterval(simT);}
+});
+
+aud.addEventListener('timeupdate',()=>{if(!aud.duration)return;setProgress(aud.currentTime/aud.duration);});
+aud.addEventListener('ended',()=>{setPlayState(false);prog=0;setProgress(0);});
+aud.addEventListener('pause',()=>setPlayState(false));
+aud.addEventListener('play',()=>setPlayState(true));
+
+// Animated equalizer waveform for hero
+(function(){
+  const cv=document.getElementById('eq');
+  if(!cv) return;
+  const cx=cv.getContext('2d');
+  const N=68,prog=.34;let t=0;
+  const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function draw(){
+    if(!reduced)t+=.05;
+    const w=cv.width,h=cv.height,bw=w/N;
+    cx.clearRect(0,0,w,h);
+    for(let i=0;i<N;i++){
+      const base=Math.abs(Math.sin(i*.4)*Math.sin(i*.13+1))*.6+.12;
+      const live=base*(.7+.3*Math.sin(t+i*.5));
+      const bh=Math.max(3,live*h*.9),x=i*bw,y=(h-bh)/2;
+      const played=i/N<prog;
+      cx.fillStyle=played?'#FF1818':'#4A4E56';
+      cx.globalAlpha=played?.95:.5;
+      const r=bw*.28;cx.beginPath();
+      cx.roundRect(x+bw*.18,y,bw*.64,bh,r);cx.fill();
+    }
+    cx.globalAlpha=1;
+    if(!reduced)requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

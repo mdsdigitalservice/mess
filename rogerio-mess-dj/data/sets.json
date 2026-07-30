@@ -1,0 +1,1161 @@
+{
+  "artist": "Rogério Mess",
+  "updated": "2026-07-26",
+  "note": "src/dur/bpm vazios = aguardando arquivos MP3 reais. Preencher src com caminho relativo (ex: audio/house/129.mp3).",
+  "sections": [
+    {
+      "id": "sertanejo-pagode",
+      "label": "Sertanejo & Pagode",
+      "short": "Sertanejo",
+      "blurb": "Modão, pagode e sertanejo — do raiz ao pisadinha, ao vivo e mixado.",
+      "count": 30,
+      "tracks": [
+        {
+          "id": "sertanejo-pagode-01-xande-de-pilares-samba-raiz-completo",
+          "title": "Xande de Pilares -Samba Raiz Completo-",
+          "tags": [],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-02-lambadao-novosom-realsom-bandaellus-01",
+          "title": "#Lambadao #NovoSom #RealSom #BandaEllus 01",
+          "tags": [
+            "Lambadao",
+            "NovoSom",
+            "RealSom",
+            "BandaEllus"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-03-lambadao-novosom-realsom-bandaellus-02",
+          "title": "#Lambadao #NovoSom #RealSom #BandaEllus 02",
+          "tags": [
+            "Lambadao",
+            "NovoSom",
+            "RealSom",
+            "BandaEllus"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-04-mixados-sertanejos-vol-29",
+          "title": "Mixados #Sertanejos #Vol.29",
+          "tags": [
+            "Sertanejos",
+            "Vol.29"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-05-mixados-sertanejos-vol-25-pisadinha",
+          "title": "Mixados #Sertanejos #Vol.25 (Pisadinha)",
+          "tags": [
+            "Sertanejos",
+            "Vol.25"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-06-panda-as-melhores",
+          "title": "PANDA -AS MELHORES-",
+          "tags": [],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-07-mixados-sertanejos-poutpourri-modaviola-vol-02",
+          "title": "Mixados #Sertanejos #PoutPourri #ModaViola Vol.02",
+          "tags": [
+            "Sertanejos",
+            "PoutPourri",
+            "ModaViola"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-08-mixados-sertanejos-poutpourri-modaviola-vol-01",
+          "title": "Mixados #Sertanejos #PoutPourri #ModaViola Vol.01",
+          "tags": [
+            "Sertanejos",
+            "PoutPourri",
+            "ModaViola"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-09-funk-setmix-antigas-furacao-2000",
+          "title": "Funk SetMix Antigas Furacao 2000",
+          "tags": [],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-10-gusttavo-lima-bruno-e-marrone-so-modao",
+          "title": "Gusttavo Lima - Bruno e Marrone - Só Modão",
+          "tags": [],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-11-aspatroas-mariliamendonca-maiara-maraisa",
+          "title": "AsPatroas #MaríliaMendonça #Maiara&Maraisa",
+          "tags": [
+            "MaríliaMendonça",
+            "Maiara&Maraisa"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-12-joatham-elder-souza-modao-akustico-derramado",
+          "title": "Joatham & Elder Souza - Modao Akustico Derramado",
+          "tags": [],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-13-joathan-freitas-niver",
+          "title": "Joathan Freitas Niver",
+          "tags": [],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-14-joathan-rancho-lima-akustico-live",
+          "title": "Joathan -Rancho Lima- Akustico Live",
+          "tags": [],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-15-clayton-romario-nochurrasco",
+          "title": "Clayton&Romario #NoChurrasco",
+          "tags": [
+            "NoChurrasco"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-16-gino-geno-as-melhores-novas-e-antigas",
+          "title": "Gino & Geno -As Melhores Novas e Antigas",
+          "tags": [],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-17-hugo-guilherme-nopelo-vol-02",
+          "title": "Hugo&Guilherme #NoPelo Vol.02",
+          "tags": [
+            "NoPelo"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-18-hugo-guilherme-remake-grandessucessos",
+          "title": "Hugo&Guilherme #Remake #GrandesSucessos",
+          "tags": [
+            "Remake",
+            "GrandesSucessos"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-19-rogermodao-livesertanejo-canellasvg",
+          "title": "RogerModao #LiveSertanejo #CanellasVg",
+          "tags": [
+            "LiveSertanejo",
+            "CanellasVg"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-20-fernando-sorocaba-ao-vivo-jaguariuna-2024",
+          "title": "Fernando Sorocaba Ao Vivo Jaguariúna 2024",
+          "tags": [],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-21-marcio-art-ao-vivo-cantando-sucessos-do-pagode-90",
+          "title": "Marcio Art Ao Vivo cantando Sucessos do Pagode 90",
+          "tags": [],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-22-pagode-no-quintal-encontro-de-batuqueiros",
+          "title": "Pagode no Quintal - Encontro de Batuqueiros",
+          "tags": [],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-23-sorriso-maroto-completo-amigos-2024",
+          "title": "Sorriso Maroto - Completo + Amigos 2024",
+          "tags": [],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-24-bokaloka-rodadesamba",
+          "title": "BokaLoka #RodadeSamba",
+          "tags": [
+            "RodadeSamba"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-25-molejo-programaresenhamusical",
+          "title": "Molejo #ProgramaResenhaMusical",
+          "tags": [
+            "ProgramaResenhaMusical"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-26-resenhado-totequerendo",
+          "title": "Resenhado #TôTeQuerendo",
+          "tags": [
+            "TôTeQuerendo"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-27-thiago-martins-quintal-do-tg",
+          "title": "Thiago Martins Quintal do TG",
+          "tags": [],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-28-quinteto-belem-pa",
+          "title": "Quinteto Belém PA",
+          "tags": [],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-29-quinteto-florianopolis-sc",
+          "title": "Quinteto Florianópolis SC",
+          "tags": [],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "sertanejo-pagode-30-thiagosoares-sambadafeira",
+          "title": "ThiagoSoares #SambadaFeira",
+          "tags": [
+            "SambadaFeira"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        }
+      ]
+    },
+    {
+      "id": "house",
+      "label": "House",
+      "short": "House",
+      "blurb": "Do comercial ao melodic techno — a espinha dorsal dos sets de pista.",
+      "count": 34,
+      "tracks": [
+        {
+          "id": "house-01-129-setlive-housecomercial-brasil",
+          "title": "#129 #SetLive #HouseComercial #Brasil",
+          "tags": [
+            "129",
+            "SetLive",
+            "HouseComercial",
+            "Brasil"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-02-128-technomelodic-missmonique-korolova-monolink",
+          "title": "#128 #TechnoMelodic #MissMonique #Korolova #Monolink",
+          "tags": [
+            "128",
+            "TechnoMelodic",
+            "MissMonique",
+            "Korolova",
+            "Monolink"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-03-127-technomelodic-sebastienleger-mindagainst-sandyrivera",
+          "title": "#127 #TechnoMelodic #SébastienLéger #MindAgainst #SandyRivera",
+          "tags": [
+            "127",
+            "TechnoMelodic",
+            "SébastienLéger",
+            "MindAgainst",
+            "SandyRivera"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-04-126-deephouse-lounge-salles",
+          "title": "#126 #DeepHouse #Lounge #Salles",
+          "tags": [
+            "126",
+            "DeepHouse",
+            "Lounge",
+            "Salles"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-05-125-technomelodic-monolink-missmonique-kamilosanclemente",
+          "title": "#125 #TechnoMelodic #Monolink #MissMonique #KamiloSanclemente",
+          "tags": [
+            "125",
+            "TechnoMelodic",
+            "Monolink",
+            "MissMonique",
+            "KamiloSanclemente"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-06-124-techouse-flashouse-canaldamusicaoficiall",
+          "title": "#124 #TecHouse #FlasHouse #CanalDaMusicaOficiall",
+          "tags": [
+            "124",
+            "TecHouse",
+            "FlasHouse",
+            "CanalDaMusicaOficiall"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-07-123-housecomercial-dezko-peggygou-lavern-vintageculture",
+          "title": "#123 #HouseComercial #Dezko #PeggyGou #Lavern #VintageCulture",
+          "tags": [
+            "123",
+            "HouseComercial",
+            "Dezko",
+            "PeggyGou",
+            "Lavern",
+            "VintageCulture"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-08-122-techouse-malandro-house",
+          "title": "#122 #TecHouse #Malandro #House",
+          "tags": [
+            "122",
+            "TecHouse",
+            "Malandro",
+            "House"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-09-121-flashouse-houseprogerssive",
+          "title": "#121 #FlasHouse HouseProgerssive",
+          "tags": [
+            "121",
+            "FlasHouse"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-10-120-techouse-comercial-astops",
+          "title": "#120 #TecHouse #Comercial #AsTops",
+          "tags": [
+            "120",
+            "TecHouse",
+            "Comercial",
+            "AsTops"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-11-119-technomelodic-houseprogressivo",
+          "title": "#119 #TechnoMelodic #HouseProgressivo",
+          "tags": [
+            "119",
+            "TechnoMelodic",
+            "HouseProgressivo"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-12-118-houseprogressiv-tecno-boxberg",
+          "title": "#118 #HouseProgressiv #Tecno -Boxberg-",
+          "tags": [
+            "118",
+            "HouseProgressiv",
+            "Tecno"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-13-117-housemelodic-progressiv-boxberg",
+          "title": "#117 #HouseMelodic #Progressiv -Boxberg-",
+          "tags": [
+            "117",
+            "HouseMelodic",
+            "Progressiv"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-14-116-afrohouse-progressive-boxberg",
+          "title": "#116 #AfroHouse #Progressive -Boxberg-",
+          "tags": [
+            "116",
+            "AfroHouse",
+            "Progressive"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-15-115-tecno-houseprogerssive-b2b-boxberg",
+          "title": "#115 #Tecno #HouseProgerssive #B2B #BoxBerg",
+          "tags": [
+            "115",
+            "Tecno",
+            "HouseProgerssive",
+            "B2B",
+            "BoxBerg"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-16-114-housecomercial-atuais-novas-98min",
+          "title": "#114 #HouseComercial #Atuais-Novas (98min)",
+          "tags": [
+            "114",
+            "HouseComercial",
+            "Atuais"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-17-113-houseorganic-boxberg",
+          "title": "#113 #HouseOrganic #BoxBerg",
+          "tags": [
+            "113",
+            "HouseOrganic",
+            "BoxBerg"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-18-112-housemelodic-box65-benbohmer-eelkekleijn-noraenpure",
+          "title": "#112 HouseMelodic #Box65 #BenBöhmer #EelkeKleijn #NoraEnPure",
+          "tags": [
+            "112",
+            "Box65",
+            "BenBöhmer",
+            "EelkeKleijn",
+            "NoraEnPure"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-19-111-housemelodic-box65-artbat-aiwaska-rufusdosol",
+          "title": "#111 HouseMelodic #Box65 #Artbat #Aiwaska #RufusDoSol",
+          "tags": [
+            "111",
+            "Box65",
+            "Artbat",
+            "Aiwaska",
+            "RufusDoSol"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-20-110-housemelodic-korolova-anyma",
+          "title": "#110 HouseMelodic #Korolova #Anyma",
+          "tags": [
+            "110",
+            "Korolova",
+            "Anyma"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-21-109-housemelodic-missmonique-adamsellouk",
+          "title": "#109 HouseMelodic #MissMonique #AdamSellouk",
+          "tags": [
+            "109",
+            "MissMonique",
+            "AdamSellouk"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-22-108-house-melodic-tops2022",
+          "title": "#108 #House #Melodic #Tops2022",
+          "tags": [
+            "108",
+            "House",
+            "Melodic",
+            "Tops2022"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-23-107-house-melodic-techouse-antigas",
+          "title": "#107 #House #Melodic #Techouse (Antigas)",
+          "tags": [
+            "107",
+            "House",
+            "Melodic",
+            "Techouse"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-24-106-house-melodic-shoppingestacao-top",
+          "title": "#106 #House #Melodic #ShoppingEstacao #Top",
+          "tags": [
+            "106",
+            "House",
+            "Melodic",
+            "ShoppingEstacao",
+            "Top"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-25-105-house-melodic-tocadas",
+          "title": "#105 #House #Melodic #Tocadas",
+          "tags": [
+            "105",
+            "House",
+            "Melodic",
+            "Tocadas"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-26-104-techouse-tocadas",
+          "title": "#104 #Techouse #Tocadas",
+          "tags": [
+            "104",
+            "Techouse",
+            "Tocadas"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-27-103-house-setlive-housemistura",
+          "title": "#103 #House #SetLive #HouseMistura",
+          "tags": [
+            "103",
+            "House",
+            "SetLive",
+            "HouseMistura"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-28-102-house-setlive-vintageculture",
+          "title": "#102 #House #SetLive #VintageCulture",
+          "tags": [
+            "102",
+            "House",
+            "SetLive",
+            "VintageCulture"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-29-94-housedeep-mundomusic-quarentena-iv",
+          "title": "#94 #HouseDeep #MundoMusic #Quarentena IV",
+          "tags": [
+            "94",
+            "HouseDeep",
+            "MundoMusic",
+            "Quarentena"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-30-89-housedisco-purplediscomachine-chapadamt",
+          "title": "#89 #HouseDisco #PurpleDiscoMachine #ChapadaMt",
+          "tags": [
+            "89",
+            "HouseDisco",
+            "PurpleDiscoMachine",
+            "ChapadaMt"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-31-88-housecomercial-chapadamt-meduza-victorlou-vintage-blaze",
+          "title": "#88 #HouseComercial #ChapadaMt #Meduza #VictorLou #Vintage #Blaze",
+          "tags": [
+            "88",
+            "HouseComercial",
+            "ChapadaMt",
+            "Meduza",
+            "VictorLou",
+            "Vintage",
+            "Blaze"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-32-84-setlive-housecomercial-vintage",
+          "title": "#84 #SetLive #HouseComercial #Vintage",
+          "tags": [
+            "84",
+            "SetLive",
+            "HouseComercial",
+            "Vintage"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-33-76-deephouse-loungelenta",
+          "title": "#76 #DeepHouse #LoungeLenta",
+          "tags": [
+            "76",
+            "DeepHouse",
+            "LoungeLenta"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "house-34-73-housecomercial-explosao",
+          "title": "#73 #HouseComercial #Explosao",
+          "tags": [
+            "73",
+            "HouseComercial",
+            "Explosao"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        }
+      ]
+    },
+    {
+      "id": "flashback",
+      "label": "FlashBack's",
+      "short": "FlashBack",
+      "blurb": "Dos anos 80 aos 2010 — pop, rock, tribal e dance que enchem a pista de nostalgia.",
+      "count": 34,
+      "tracks": [
+        {
+          "id": "flashback-01-flashback-80-frestylle",
+          "title": "#FlashBack #80 Frestylle",
+          "tags": [
+            "FlashBack",
+            "80"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-02-flashback-80-modern-talking",
+          "title": "#FlashBack #80 Modern Talking",
+          "tags": [
+            "FlashBack",
+            "80"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-03-flashback80-lentapop",
+          "title": "#FlashBack80 LentaPop",
+          "tags": [
+            "FlashBack80"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-04-flashback80-loungelenta",
+          "title": "#FlashBack80 LoungeLenta",
+          "tags": [
+            "FlashBack80"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-05-flashback-85-90-dominguinhos",
+          "title": "#FlashBack 85-90 Dominguinhos",
+          "tags": [
+            "FlashBack"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-06-flashback-80-house-tops-bday-jacare",
+          "title": "#FlashBack #80 #House-Tops- (Bday-Jacare)",
+          "tags": [
+            "FlashBack",
+            "80",
+            "House"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-07-flashback-80-livramentomt",
+          "title": "#FlashBack #80 #LivramentoMt",
+          "tags": [
+            "FlashBack",
+            "80",
+            "LivramentoMt"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-08-flashback-80-bomsucessovg",
+          "title": "#FlashBack #80 #BomSucessoVg",
+          "tags": [
+            "FlashBack",
+            "80",
+            "BomSucessoVg"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-09-flashback-80rock-internacional",
+          "title": "#FlashBack-#80Rock #Internacional",
+          "tags": [
+            "FlashBack",
+            "80Rock",
+            "Internacional"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-10-flashback-80rock-jovemguarda-internacional",
+          "title": "#FlashBack #80Rock #JovemGuarda #Internacional",
+          "tags": [
+            "FlashBack",
+            "80Rock",
+            "JovemGuarda",
+            "Internacional"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-11-flashback-80-house-lento",
+          "title": "#FlashBack #80 #House #Lento",
+          "tags": [
+            "FlashBack",
+            "80",
+            "House",
+            "Lento"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-12-flashback-80-60min",
+          "title": "#FlashBack #80 (60Min.)",
+          "tags": [
+            "FlashBack",
+            "80"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-13-flashback-80-70min",
+          "title": "#FlashBack #80 (70min.)",
+          "tags": [
+            "FlashBack",
+            "80"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-14-flashback-80-90-house",
+          "title": "#FlashBack #80-90 #House",
+          "tags": [
+            "FlashBack",
+            "80",
+            "House"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-15-flashback-80-85-90",
+          "title": "#FlashBack #80-85-90",
+          "tags": [
+            "FlashBack",
+            "80"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-16-flashback-90-lentatop-dominguinhos",
+          "title": "#FlashBack 90 LentaTop Dominguinhos",
+          "tags": [
+            "FlashBack"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-17-flashback-90-edilsonpm-canellasvg-01",
+          "title": "#FlashBack #90 #EdilsonPm #CanellasVG -01-",
+          "tags": [
+            "FlashBack",
+            "90",
+            "EdilsonPm",
+            "CanellasVG"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-18-flashback-90-edilsonpm-canellasvg-02",
+          "title": "#FlashBack #90 #EdilsonPm #CanellasVG -02-",
+          "tags": [
+            "FlashBack",
+            "90",
+            "EdilsonPm",
+            "CanellasVG"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-19-flashback-90-videolive-casamess",
+          "title": "#FlashBack #90 #VideoLive #CasaMess",
+          "tags": [
+            "FlashBack",
+            "90",
+            "VideoLive",
+            "CasaMess"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-20-flashback-90-nivermacacovg",
+          "title": "#FlashBack #90 #NiverMacacoVG",
+          "tags": [
+            "FlashBack",
+            "90",
+            "NiverMacacoVG"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-21-flashback-90",
+          "title": "#FlashBack #90",
+          "tags": [
+            "FlashBack",
+            "90"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-22-flashback-90-tribal-resenha-marcelo-tal",
+          "title": "#FlashBack #90 #Tribal (Resenha Marcelo Tal)",
+          "tags": [
+            "FlashBack",
+            "90",
+            "Tribal"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-23-flashback-90-tribal",
+          "title": "#FlashBack #90 #Tribal",
+          "tags": [
+            "FlashBack",
+            "90",
+            "Tribal"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-24-flashback-2000-dance-resenha-marcelo-tal",
+          "title": "#FlashBack #2000 #Dance (Resenha Marcelo Tal)",
+          "tags": [
+            "FlashBack",
+            "2000",
+            "Dance"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-25-flashback-2000-bomclima",
+          "title": "#FlashBack #2000 #BomClima",
+          "tags": [
+            "FlashBack",
+            "2000",
+            "BomClima"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-26-flashback-2000-casamess",
+          "title": "#Flashback #2000 #CasaMess",
+          "tags": [
+            "Flashback",
+            "2000",
+            "CasaMess"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-27-flashback-2005-topsss",
+          "title": "#FlashBack #2005 #Topsss",
+          "tags": [
+            "FlashBack",
+            "2005",
+            "Topsss"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-28-flashback-2000-2005-canaldamusicaoficiall",
+          "title": "#FlashBack #2000-2005 #CanalDaMusicaOficiall",
+          "tags": [
+            "FlashBack",
+            "2000",
+            "CanalDaMusicaOficiall"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-29-flashback-2000-2005-pancadao",
+          "title": "#FlashBack #2000-2005 #Pancadao",
+          "tags": [
+            "FlashBack",
+            "2000",
+            "Pancadao"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-30-flashback-2010-house-transas-zagaia",
+          "title": "#FlashBack #2010 #House #Transas #Zagaia",
+          "tags": [
+            "FlashBack",
+            "2010",
+            "House",
+            "Transas",
+            "Zagaia"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-31-flashback-2011-omegajacare-vol-07-live",
+          "title": "#FlashBack #2011 #OmegaJacare #Vol.07 #Live",
+          "tags": [
+            "FlashBack",
+            "2011",
+            "OmegaJacare",
+            "Vol.07",
+            "Live"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-32-flashback-2000-2005-2010-dna",
+          "title": "FlashBack #2000-2005-2010 #DNA",
+          "tags": [
+            "2000",
+            "DNA"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-33-flashback-2010-2015-midback",
+          "title": "FlashBack #2010-2015 MidBack",
+          "tags": [
+            "2010"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        },
+        {
+          "id": "flashback-34-flashback-2014-relembrando-dance",
+          "title": "#FlashBack #2014 #Relembrando #Dance",
+          "tags": [
+            "FlashBack",
+            "2014",
+            "Relembrando",
+            "Dance"
+          ],
+          "dur": "",
+          "bpm": null,
+          "src": ""
+        }
+      ]
+    }
+  ]
+}
