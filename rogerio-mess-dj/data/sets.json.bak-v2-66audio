@@ -1,13 +1,13 @@
 {
   "artist": "Rogério Mess",
-  "updated": "2026-07-31",
+  "updated": "2026-07-30",
   "sections": [
     {
       "id": "house",
       "label": "House",
       "short": "House",
       "blurb": "Do comercial ao melodic techno — a espinha dorsal dos sets de pista.",
-      "count": 41,
+      "count": 36,
       "tracks": [
         {
           "id": "house-01-129-housesuave-lounge-flashouse",
@@ -18,7 +18,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/129-HouseSuave-Lounge-FlasHouse.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2026/07/129-HouseSuave-Lounge-FlasHouse.mp3"
         },
         {
           "id": "house-02-129-setlive-housecomercial-brasil",
@@ -30,7 +30,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/129-SetLive-HouseComercial-Brasil.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2025/12/129-SetLive-HouseComercial-Brasil.mp3"
         },
         {
           "id": "house-03-128-technomelodic-missmonique-korolova-monolink",
@@ -43,11 +43,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/128-TechnoMelodic-MissMonique-Korolova-Monolink.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/08/128-TechnoMelodic-MissMonique-Korolova-Monolink.mp3"
         },
         {
           "id": "house-04-127-technomelodic-sebastienleger-mindagainst-sandy",
-          "title": "127 TechnoMelodic SebastienLeger MindAgainst SandyRivera",
+          "title": "127 #TechnoMelodic #SébastienLéger #MindAgainst #SandyRivera",
           "tags": [
             "TechnoMelodic",
             "SébastienLéger",
@@ -56,7 +56,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/127-TechnoMelodic-SebastienLeger-MindAgainst-SandyRivera.mp3"
+          "src": ""
         },
         {
           "id": "house-05-126-deephouse-lounge-salles",
@@ -68,7 +68,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/126-DeepHouse-Lounge-Salles.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/02/126-DeepHouse-Lounge-Salles.mp3"
         },
         {
           "id": "house-06-125-technomelodic-monolink-missmonique-kamilosancl",
@@ -81,7 +81,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/125-TechnoMelodic-Monolink-MissMonique-KamiloSanclemente.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/01/125-TechnoMelodic-Monolink-MissMonique-KamiloSanclemente.mp3"
         },
         {
           "id": "house-07-124-techouse-flashouse-canaldamusicaoficiall",
@@ -93,7 +93,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/124-TecHouse-FlasHouse-CanalDaMusicaOficiall.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/01/124-TecHouse-FlasHouse-CanalDaMusicaOficiall.mp3"
         },
         {
           "id": "house-08-123-housecomercial-dezko-peggygou-lavern-vintagecu",
@@ -107,7 +107,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/123-HouseComercial-Dezko-PeggyGou-Lavern-VintageCulture.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/10/123-HouseComercial-Dezko-PeggyGou-Lavern-VintageCulture.mp3"
         },
         {
           "id": "house-09-122-techouse-malandro-house",
@@ -119,7 +119,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/122-TecHouse-Malandro-House-1.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/06/122-TecHouse-Malandro-House-1.mp3"
         },
         {
           "id": "house-10-121-flashouse-houseprogerssive",
@@ -129,7 +129,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/121-FlasHouse-HouseProgerssive.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/05/121-FlasHouse-HouseProgerssive.mp3"
         },
         {
           "id": "house-11-120-techouse-comercial-astops",
@@ -141,7 +141,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/120-TecHouse-Comercial-AsTops.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/05/120-TecHouse-Comercial-AsTops.mp3"
         },
         {
           "id": "house-12-119-tecnomelodic-houseprogressivo",
@@ -152,40 +152,40 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/119-TecnoMelodic-HouseProgressivo.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/04/119-TecnoMelodic-HouseProgressivo.mp3"
         },
         {
           "id": "house-13-118-houseprogressiv-tecno-boxberg",
-          "title": "118 #HouseProgressiv #Tecno Boxberg",
+          "title": "118 #HouseProgressiv #Tecno -Boxberg-",
           "tags": [
             "HouseProgressiv",
             "Tecno"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/118-HouseProgressiv-Tecno-Boxberg-.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/01/118-HouseProgressiv-Tecno-Boxberg-.mp3"
         },
         {
           "id": "house-14-117-housemelodic-progressiv-boxberg",
-          "title": "117 #HouseMelodic #Progressiv Boxberg",
+          "title": "117 #HouseMelodic #Progressiv -Boxberg-",
           "tags": [
             "HouseMelodic",
             "Progressiv"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/117-HouseMelodic-Progressiv-Boxberg-.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/01/117-HouseMelodic-Progressiv-Boxberg-.mp3"
         },
         {
           "id": "house-15-116-afrohouse-progressive-boxberg",
-          "title": "116 #AfroHouse #Progressive Boxberg",
+          "title": "116 #AfroHouse #Progressive -Boxberg-",
           "tags": [
             "AfroHouse",
             "Progressive"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/116-AfroHouse-Progressive-Boxberg-.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/01/116-AfroHouse-Progressive-Boxberg-.mp3"
         },
         {
           "id": "house-16-115-tecno-houseprogerssive-b2b-boxberg",
@@ -198,18 +198,18 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/115-Tecno-HouseProgerssive-B2B-BoxBerg.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/01/115-Tecno-HouseProgerssive-B2B-BoxBerg.mp3"
         },
         {
           "id": "house-17-114-housecomercial-atuais-novas-98min",
-          "title": "114 #HouseComercial #Atuais Novas (98min)",
+          "title": "114 #HouseComercial #Atuais-Novas (98min)",
           "tags": [
             "HouseComercial",
             "Atuais"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/114-HouseComercial-Atuais-Novas-98min.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/01/114-HouseComercial-Atuais-Novas-98min.mp3"
         },
         {
           "id": "house-18-113-houseorganic-boxberg",
@@ -220,11 +220,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/113-HouseOrganic-BoxBerg.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/01/113-HouseOrganic-BoxBerg.mp3"
         },
         {
           "id": "house-19-112-housemelodic-box65-benbohmer-eelkekleijn-norae",
-          "title": "112 HouseMelodic Box65 BenBohmer EelkeKleijn NoraEnPure",
+          "title": "112 HouseMelodic #Box65 #BenBöhmer #EelkeKleijn #NoraEnPure",
           "tags": [
             "Box65",
             "BenBöhmer",
@@ -233,11 +233,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/112-HouseMelodic-Box65-BenBohmer-EelkeKleijn-NoraEnPure.mp3"
+          "src": ""
         },
         {
           "id": "house-20-111-housemelodic-box65-artbat-aiwaska-rufusdosol",
-          "title": "111 HouseMelodic Box65 Artbat Aiwaska RufusDoSol",
+          "title": "111 HouseMelodic #Box65 #Artbat #Aiwaska #RufusDoSol",
           "tags": [
             "Box65",
             "Artbat",
@@ -246,7 +246,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/111-HouseMelodic-Box65-Artbat-Aiwaska-RufusDoSol.mp3"
+          "src": ""
         },
         {
           "id": "house-21-110-housemelodic-korolova-anyma-jickow-touchtalk-y",
@@ -257,7 +257,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/110-HouseMelodic-Korolova-Anyma-Jickow-Touchtalk-Yotto-Laudic.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2022/03/110-HouseMelodic-Korolova-Anyma-Jickow-Touchtalk-Yotto-Laudic.mp3"
         },
         {
           "id": "house-22-109-housemelodic-missmonique-adamsellouk-oliverkol",
@@ -268,11 +268,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/109-HouseMelodic-MissMonique-AdamSellouk-OliverKoletzki-Moby.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2022/03/109-HouseMelodic-MissMonique-AdamSellouk-OliverKoletzki-Moby.mp3"
         },
         {
-          "id": "house-23-108-house-melodic-tops2022",
-          "title": "108 #House #Melodic #Tops2022",
+          "id": "house-23-108-house-melodic-tops2022-mp3",
+          "title": "108 #House #Melodic #Tops2022.mp3",
           "tags": [
             "House",
             "Melodic",
@@ -280,11 +280,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/108-House-Melodic-Tops2022.mp3"
+          "src": ""
         },
         {
           "id": "house-24-107-house-melodic-techouse-antigas",
-          "title": "107 House Melodic Techouse Antigas",
+          "title": "107 #House #Melodic #Techouse (Antigas)",
           "tags": [
             "House",
             "Melodic",
@@ -292,11 +292,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/107-House-Melodic-Techouse-Antigas.mp3"
+          "src": ""
         },
         {
           "id": "house-25-106-house-melodic-shoppingestacao-top",
-          "title": "106 House Melodic ShoppingEstacao Top",
+          "title": "106 #House #Melodic #ShoppingEstacao #Top",
           "tags": [
             "House",
             "Melodic",
@@ -305,11 +305,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/106-House-Melodic-ShoppingEstacao-Top.mp3"
+          "src": ""
         },
         {
           "id": "house-26-105-house-melodic-tocadas",
-          "title": "105 House Melodic Tocadas",
+          "title": "105 #House #Melodic #Tocadas",
           "tags": [
             "House",
             "Melodic",
@@ -317,22 +317,22 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/105-House-Melodic-Tocadas.mp3"
+          "src": ""
         },
         {
           "id": "house-27-104-techouse-tocadas",
-          "title": "104 Techouse Tocadas",
+          "title": "104 #Techouse #Tocadas",
           "tags": [
             "Techouse",
             "Tocadas"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/104-Techouse-Tocadas.mp3"
+          "src": ""
         },
         {
           "id": "house-28-103-house-setlive-housemistura",
-          "title": "103 House SetLive HouseMistura",
+          "title": "103 #House #SetLive #HouseMistura",
           "tags": [
             "House",
             "SetLive",
@@ -340,11 +340,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/103-House-SetLive-HouseMistura.mp3"
+          "src": ""
         },
         {
           "id": "house-29-102-house-setlive-vintageculture",
-          "title": "102 House SetLive VintageCulture",
+          "title": "102 #House #SetLive #VintageCulture",
           "tags": [
             "House",
             "SetLive",
@@ -352,11 +352,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/102-House-SetLive-VintageCulture.mp3"
+          "src": ""
         },
         {
           "id": "house-30-94-housedeep-mundomusic-quarentena-iv",
-          "title": "94 HouseDeep MundoMusic Quarentena IV",
+          "title": "94 #HouseDeep #MundoMusic #Quarentena IV",
           "tags": [
             "HouseDeep",
             "MundoMusic",
@@ -364,11 +364,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/94-HouseDeep-MundoMusic-Quarentena-IV.mp3"
+          "src": ""
         },
         {
           "id": "house-31-89-housedisco-purplediscomachine-chapadamt",
-          "title": "89 HouseDisco PurpleDiscoMachine ChapadaMt",
+          "title": "89 #HouseDisco #PurpleDiscoMachine #ChapadaMt",
           "tags": [
             "HouseDisco",
             "PurpleDiscoMachine",
@@ -376,11 +376,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/89-HouseDisco-PurpleDiscoMachine-ChapadaMt.mp3"
+          "src": ""
         },
         {
-          "id": "house-32-88-housecomercial-chapadamt-meduzavictorlou-vintag",
-          "title": "88 HouseComercial ChapadaMt MeduzaVictorLou Vintage Blaze",
+          "id": "house-32-88-housecomercial-chapadamt-meduza-victorlou-vinta",
+          "title": "88 #HouseComercial #ChapadaMt #Meduza#VictorLou #Vintage #Blaze",
           "tags": [
             "HouseComercial",
             "ChapadaMt",
@@ -391,11 +391,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/88-HouseComercial-ChapadaMt-MeduzaVictorLou-Vintage-Blaze.mp3"
+          "src": ""
         },
         {
           "id": "house-33-84-setlive-housecomercial-vintage",
-          "title": "84 SetLive HouseComercial Vintage",
+          "title": "84 #SetLive #HouseComercial #Vintage",
           "tags": [
             "SetLive",
             "HouseComercial",
@@ -403,29 +403,29 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/84-SetLive-HouseComercial-Vintage.mp3"
+          "src": ""
         },
         {
           "id": "house-34-76-deephouse-loungelenta",
-          "title": "76 DeepHouse LoungeLenta",
+          "title": "76 #DeepHouse #LoungeLenta",
           "tags": [
             "DeepHouse",
             "LoungeLenta"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/76-DeepHouse-LoungeLenta.mp3"
+          "src": ""
         },
         {
           "id": "house-35-73-housecomercial-explosao",
-          "title": "73 HouseComercial Explosao",
+          "title": "73 #HouseComercial #Explosao",
           "tags": [
             "HouseComercial",
             "Explosao"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/73-HouseComercial-Explosao.mp3"
+          "src": ""
         },
         {
           "id": "house-36-122-techouse-malandro-house",
@@ -437,47 +437,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/122-TecHouse-Malandro-House.mp3"
-        },
-        {
-          "id": "house-37-102-house-setlive-vintageculture-1",
-          "title": "102 House SetLive VintageCulture 1",
-          "tags": [],
-          "bpm": null,
-          "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/102-House-SetLive-VintageCulture-1.mp3"
-        },
-        {
-          "id": "house-38-73-housecomercial-explosao-1",
-          "title": "73 HouseComercial Explosao 1",
-          "tags": [],
-          "bpm": null,
-          "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/73-HouseComercial-Explosao-1.mp3"
-        },
-        {
-          "id": "house-39-105-house-melodic-tocadas",
-          "title": "105 House Melodic Tocadas",
-          "tags": [],
-          "bpm": null,
-          "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/105-_House-_Melodic-_Tocadas.mp3"
-        },
-        {
-          "id": "house-40-106-house-melodic-shoppingestacao",
-          "title": "106 House Melodic ShoppingEstacao",
-          "tags": [],
-          "bpm": null,
-          "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/106-_House-_Melodic-_ShoppingEstacao.mp3"
-        },
-        {
-          "id": "house-41-107-house-melodic-techouse-antigas-rec001",
-          "title": "107 House Melodic Techouse Antigas (REC001)",
-          "tags": [],
-          "bpm": null,
-          "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/107-House-Melodic-Techouse-Antigas.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/06/122-TecHouse-Malandro-House.mp3"
         }
       ]
     },
@@ -486,7 +446,7 @@
       "label": "FlashBack's",
       "short": "FlashBack",
       "blurb": "Dos anos 80 aos 2010 — pop, rock, tribal e dance que enchem a pista de nostalgia.",
-      "count": 44,
+      "count": 40,
       "tracks": [
         {
           "id": "flashback-01-flashback-80-extedend-100bpm-01-parte",
@@ -496,7 +456,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-Extedend-100Bpm-01-parte.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2026/07/FlashBack-80-Extedend-100Bpm-01-parte.mp3"
         },
         {
           "id": "flashback-02-flashback-80-extedend-100bpm-02-parte",
@@ -506,7 +466,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-Extedend-100Bpm-02-parte.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2026/07/FlashBack-80-Extedend-100Bpm-02-parte.mp3"
         },
         {
           "id": "flashback-03-flashback-80-frestylle",
@@ -516,7 +476,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-Frestylle.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2026/01/FlashBack-80-Frestylle.mp3"
         },
         {
           "id": "flashback-04-flashback-80-modern-talking",
@@ -526,7 +486,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-Modern-Talking-1.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2025/10/FlashBack-80-Modern-Talking-1.mp3"
         },
         {
           "id": "flashback-05-flashback80-lentapop",
@@ -536,7 +496,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack80-LentaPop.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/12/FlashBack80-LentaPop.mp3"
         },
         {
           "id": "flashback-06-flashback80-loungelenta",
@@ -546,65 +506,65 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack80-LoungeLenta.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/12/FlashBack80-LoungeLenta.mp3"
         },
         {
           "id": "flashback-07-flashback-85-90-dominguinhos",
-          "title": "FlashBack 85 90 Dominguinhos",
+          "title": "FlashBack 85-90 Dominguinhos",
           "tags": [
             "FlashBack"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-85-90-Dominguinhos.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/01/FlashBack-85-90-Dominguinhos.mp3"
         },
         {
           "id": "flashback-08-flashback80-house-tops-jacare",
-          "title": "FlashBack80 House Tops (Jacare)",
+          "title": "FlashBack80 House -Tops- (Jacare)",
           "tags": [
             "FlashBack",
             "House"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack80-House-Tops-Jacare.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/01/FlashBack80-House-Tops-Jacare.mp3"
         },
         {
           "id": "flashback-09-flashback-80-livramentomt",
-          "title": "FlashBack 80 LivramentoMt",
+          "title": "FlashBack #80 #LivramentoMt",
           "tags": [
             "FlashBack",
             "LivramentoMt"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-LivramentoMt.mp3"
+          "src": ""
         },
         {
           "id": "flashback-10-flashback-80-bomsucessovg",
-          "title": "FlashBack 80 BomSucessoVg",
+          "title": "FlashBack #80 #BomSucessoVg",
           "tags": [
             "FlashBack",
             "BomSucessoVg"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-BomSucessoVg.mp3"
+          "src": ""
         },
         {
-          "id": "flashback-11-flashback-80-rock-jovemguarda-internacional",
-          "title": "FlashBack 80 Rock JovemGuarda Internacional",
+          "id": "flashback-11-flashback-80rock-internacional",
+          "title": "FlashBack-#80Rock #Internacional",
           "tags": [
             "FlashBack",
             "Internacional"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-Rock-JovemGuarda-Internacional.mp3"
+          "src": ""
         },
         {
-          "id": "flashback-12-flashback-80-60min-1",
-          "title": "FlashBack 80 60Min. 1",
+          "id": "flashback-12-flashback-80rock-jovemguarda-internacional",
+          "title": "FlashBack #80Rock #JovemGuarda #Internacional",
           "tags": [
             "FlashBack",
             "JovemGuarda",
@@ -612,11 +572,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-60Min.-1.mp3"
+          "src": ""
         },
         {
           "id": "flashback-13-flashback-80-house-lento",
-          "title": "FlashBack 80 House Lento",
+          "title": "FlashBack #80 #House #Lento",
           "tags": [
             "FlashBack",
             "House",
@@ -624,48 +584,48 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-House-Lento.mp3"
+          "src": ""
         },
         {
           "id": "flashback-14-flashback-80-60min",
-          "title": "FlashBack 80 60Min.",
+          "title": "FlashBack #80 (60Min.)",
           "tags": [
             "FlashBack"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-60Min..mp3"
+          "src": ""
         },
         {
           "id": "flashback-15-flashback-80-70min",
-          "title": "FlashBack 80 70min.",
+          "title": "FlashBack #80 (70min.)",
           "tags": [
             "FlashBack"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-70min..mp3"
+          "src": ""
         },
         {
           "id": "flashback-16-flashback-80-90-house",
-          "title": "FlashBack 80 90 House",
+          "title": "FlashBack #80-90 #House",
           "tags": [
             "FlashBack",
             "House"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-90-House.mp3"
+          "src": ""
         },
         {
           "id": "flashback-17-flashback-80-85-90",
-          "title": "FlashBack 80 85 90",
+          "title": "FlashBack #80-85-90",
           "tags": [
             "FlashBack"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-85-90.mp3"
+          "src": ""
         },
         {
           "id": "flashback-18-flashback-90-lentatop-dominguinhos",
@@ -675,11 +635,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-90-LentaTop-Dominguinhos.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/01/FlashBack-90-LentaTop-Dominguinhos.mp3"
         },
         {
           "id": "flashback-19-flashback-90-edilsonpm-canellasvg-01",
-          "title": "FlashBack 90 EdilsonPm CanellasVG 01",
+          "title": "FlashBack #90 #EdilsonPm #CanellasVG -01-",
           "tags": [
             "FlashBack",
             "EdilsonPm",
@@ -687,11 +647,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-90-EdilsonPm-CanellasVG-01-.mp3"
+          "src": ""
         },
         {
-          "id": "flashback-20-flashback-90-edilsonpm-canellasvg-02",
-          "title": "FlashBack 90 EdilsonPm CanellasVG 02",
+          "id": "flashback-20-hugo-guilherme-nopelo02",
+          "title": "Hugo&Guilherme #NoPelo02",
           "tags": [
             "FlashBack",
             "EdilsonPm",
@@ -699,11 +659,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-90-EdilsonPm-CanellasVG-02-.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/01/HugoGuilherme-NoPelo02.mp3"
         },
         {
           "id": "flashback-21-flashback-90-videolive-casamess",
-          "title": "FlashBack 90 VideoLive CasaMess",
+          "title": "FlashBack #90 #VideoLive #CasaMess",
           "tags": [
             "FlashBack",
             "VideoLive",
@@ -711,28 +671,28 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-90-VideoLive-CasaMess.mp3"
+          "src": ""
         },
         {
           "id": "flashback-22-flashback-90-nivermacacovg",
-          "title": "FlashBack 90 NiverMacacoVG",
+          "title": "FlashBack #90 #NiverMacacoVG",
           "tags": [
             "FlashBack",
             "NiverMacacoVG"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-90-NiverMacacoVG.mp3"
+          "src": ""
         },
         {
           "id": "flashback-23-flashback-90",
-          "title": "FlashBack 90",
+          "title": "FlashBack #90",
           "tags": [
             "FlashBack"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-90.mp3"
+          "src": ""
         },
         {
           "id": "flashback-24-flashback-90-tribal-resenha-marcelo-tal",
@@ -743,18 +703,18 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-90-Tribal-Resenha-Marcelo-Tal-1.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/09/FlashBack-90-Tribal-Resenha-Marcelo-Tal-1.mp3"
         },
         {
           "id": "flashback-25-flashback-90-tribal",
-          "title": "FlashBack 90 Tribal",
+          "title": "FlashBack #90 #Tribal",
           "tags": [
             "FlashBack",
             "Tribal"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-90-Tribal.mp3"
+          "src": ""
         },
         {
           "id": "flashback-26-flashback-2000-dance-resenha-marcelo-tal",
@@ -765,29 +725,29 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-2000-Dance-Resenha-Marcelo-Tal-1.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/09/FlashBack-2000-Dance-Resenha-Marcelo-Tal-1.mp3"
         },
         {
           "id": "flashback-27-flashback-2000-bomclima",
-          "title": "FlashBack 2000 BomClima",
+          "title": "FlashBack #2000 #BomClima",
           "tags": [
             "FlashBack",
             "BomClima"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-2000-BomClima.mp3"
+          "src": ""
         },
         {
           "id": "flashback-28-flashback-2000-casamess",
-          "title": "Flashback 2000 CasaMess",
+          "title": "Flashback #2000 #CasaMess",
           "tags": [
             "Flashback",
             "CasaMess"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Flashback-2000-CasaMess.mp3"
+          "src": ""
         },
         {
           "id": "flashback-29-flashback-2005-topsss",
@@ -798,29 +758,29 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-2005-Topsss.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/01/FlashBack-2005-Topsss.mp3"
         },
         {
           "id": "flashback-30-flashback-2000-2005-canaldamusicaoficiall",
-          "title": "FlashBack #2000 2005 #CanalDaMusicaOficiall",
+          "title": "FlashBack #2000-2005 #CanalDaMusicaOficiall",
           "tags": [
             "FlashBack",
             "CanalDaMusicaOficiall"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-2000-2005-CanalDaMusicaOficiall.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/01/FlashBack-2000-2005-CanalDaMusicaOficiall.mp3"
         },
         {
           "id": "flashback-31-flashback-2000-2005-pancadao",
-          "title": "FlashBack 2000 2005 Pancadao",
+          "title": "FlashBack #2000-2005 #Pancadao",
           "tags": [
             "FlashBack",
             "Pancadao"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-2000-2005-Pancadao.mp3"
+          "src": ""
         },
         {
           "id": "flashback-32-flashback-2010-house-transas-zagaia",
@@ -833,7 +793,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-2010-House-Transas-Zagaia.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/01/FlashBack-2010-House-Transas-Zagaia.mp3"
         },
         {
           "id": "flashback-33-flashback-2011-omegajacare-vol-07-live",
@@ -846,32 +806,32 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-2011-OmegaJacare-Vol.07-Live.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2022/07/FlashBack-2011-OmegaJacare-Vol.07-Live.mp3"
         },
         {
           "id": "flashback-34-flashback-2000-2005-2010-dna",
-          "title": "FlashBack #2000 2005 2010 #DNA",
+          "title": "FlashBack #2000-2005-2010 #DNA",
           "tags": [
             "FlashBack",
             "DNA"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-2000-2005-2010-DNA.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2025/12/FlashBack-2000-2005-2010-DNA.mp3"
         },
         {
           "id": "flashback-35-flashback-2010-2015-midback",
-          "title": "FlashBack #2010 2015 MidBack",
+          "title": "FlashBack #2010-2015 MidBack",
           "tags": [
             "FlashBack"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-2010-2015-MidBack.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2025/12/FlashBack-2010-2015-MidBack.mp3"
         },
         {
           "id": "flashback-36-flashback-2014-relembrando-dance",
-          "title": "FlashBack 2014 Relembrando Dance",
+          "title": "FlashBack #2014 #Relembrando #Dance",
           "tags": [
             "FlashBack",
             "Relembrando",
@@ -879,17 +839,17 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-2014-Relembrando-Dance.mp3"
+          "src": ""
         },
         {
           "id": "flashback-37-flashback-2010-2017-live-jacare-santo-antonio",
-          "title": "FlashBack #2010 2017 Live Jacare (Santo Antonio)",
+          "title": "FlashBack #2010-2017 Live-Jacare (Santo Antonio)",
           "tags": [
             "FlashBack"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-2010-2017-Live-Jacare-Santo-Antonio-1.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2026/07/FlashBack-2010-2017-Live-Jacare-Santo-Antonio-1.mp3"
         },
         {
           "id": "flashback-38-flashback-80-modern-talking",
@@ -899,26 +859,10 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-Modern-Talking.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2025/10/FlashBack-80-Modern-Talking.mp3"
         },
         {
-          "id": "flashback-39-flashback-80-60min",
-          "title": "FlashBack 80 60Min.",
-          "tags": [],
-          "bpm": null,
-          "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-60Min..mp3"
-        },
-        {
-          "id": "flashback-40-flashback-80-85-90",
-          "title": "FlashBack 80 85 90",
-          "tags": [],
-          "bpm": null,
-          "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-85-90.mp3"
-        },
-        {
-          "id": "flashback-41-flashback-2000-dance-resenha-marcelo-tal",
+          "id": "flashback-39-flashback-2000-dance-resenha-marcelo-tal",
           "title": "FlashBack #2000 #Dance (Resenha Marcelo Tal)",
           "tags": [
             "FlashBack",
@@ -926,31 +870,15 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-2000-Dance-Resenha-Marcelo-Tal.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/09/FlashBack-2000-Dance-Resenha-Marcelo-Tal.mp3"
         },
         {
-          "id": "flashback-42-flashback-2010-2017-live-jacare-santo-antonio",
-          "title": "FlashBack #2010 2017 Live Jacare (Santo Antonio)",
+          "id": "flashback-40-flashback-2010-2017-live-jacare-santo-antonio",
+          "title": "FlashBack #2010-2017 Live-Jacare (Santo Antonio)",
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-2010-2017-Live-Jacare-Santo-Antonio.mp3"
-        },
-        {
-          "id": "flashback-43-flashback-80-rock",
-          "title": "FlashBack 80 Rock",
-          "tags": [],
-          "bpm": null,
-          "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-80-Rock.mp3"
-        },
-        {
-          "id": "flashback-44-flashback-2000-dance",
-          "title": "FlashBack 2000 Dance",
-          "tags": [],
-          "bpm": null,
-          "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/FlashBack-2000-Dance.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2026/07/FlashBack-2010-2017-Live-Jacare-Santo-Antonio.mp3"
         }
       ]
     },
@@ -959,15 +887,15 @@
       "label": "Sertanejo & Pagode",
       "short": "Sertanejo",
       "blurb": "Modão, pagode e sertanejo — do raiz ao pisadinha, ao vivo e mixado.",
-      "count": 37,
+      "count": 36,
       "tracks": [
         {
           "id": "sertanejo-01-xande-de-pilares-samba-raiz-completo",
-          "title": "Xande de Pilares Samba Raiz Completo",
+          "title": "Xande de Pilares -Samba Raiz Completo-",
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Xande-de-Pilares-Samba-Raiz-Completo-.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2026/01/Xande-de-Pilares-Samba-Raiz-Completo-.mp3"
         },
         {
           "id": "sertanejo-02-lambadao-novosom-realsom-bandaellus-01",
@@ -980,7 +908,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Lambadao-NovoSom-RealSom-BandaEllus-01.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2025/12/Lambadao-NovoSom-RealSom-BandaEllus-01.mp3"
         },
         {
           "id": "sertanejo-03-lambadao-novosom-realsom-bandaellus-02",
@@ -993,7 +921,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Lambadao-NovoSom-RealSom-BandaEllus-02.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2025/12/Lambadao-NovoSom-RealSom-BandaEllus-02.mp3"
         },
         {
           "id": "sertanejo-04-mixados-sertanejos-vol-29",
@@ -1004,7 +932,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Mixados-Sertanejos-Vol.29.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/07/Mixados-Sertanejos-Vol.29.mp3"
         },
         {
           "id": "sertanejo-05-mixados-sertanejos-vol-25-pisadinha",
@@ -1019,15 +947,15 @@
         },
         {
           "id": "sertanejo-06-panda-as-melhores",
-          "title": "PANDA AS MELHORES",
+          "title": "PANDA -AS MELHORES-",
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/PANDA-AS-MELHORES-.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2025/12/PANDA-AS-MELHORES-.mp3"
         },
         {
-          "id": "sertanejo-07-semresenhaakustico-mixpagodes-algomais-02",
-          "title": "SemResenhaAkustico MixPagodes AlgoMais 02",
+          "id": "sertanejo-07-mixados-sertanejos-poutpourri-modaviola-vol-02",
+          "title": "Mixados #Sertanejos #PoutPourri #ModaViola Vol.02",
           "tags": [
             "Sertanejos",
             "PoutPourri",
@@ -1035,11 +963,11 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/SemResenhaAkustico-MixPagodes-AlgoMais-02.mp3"
+          "src": ""
         },
         {
-          "id": "sertanejo-08-semresenhaakustico-mixpagodes-algomais-01",
-          "title": "SemResenhaAkustico MixPagodes AlgoMais 01",
+          "id": "sertanejo-08-mixados-sertanejos-poutpourri-modaviola-vol-01",
+          "title": "Mixados #Sertanejos #PoutPourri #ModaViola Vol.01",
           "tags": [
             "Sertanejos",
             "PoutPourri",
@@ -1047,7 +975,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/SemResenhaAkustico-MixPagodes-AlgoMais-01.mp3"
+          "src": ""
         },
         {
           "id": "sertanejo-09-funk-setmix-antigas-furacao-2000",
@@ -1055,34 +983,34 @@
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Funk-SetMix-Antigas-Furacao-2000.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/06/Funk-SetMix-Antigas-Furacao-2000.mp3"
         },
         {
           "id": "sertanejo-10-gusttavo-lima-bruno-e-marrone-so-modao",
-          "title": "Gusttavo Lima Bruno e Marrone Só Modão",
+          "title": "Gusttavo Lima - Bruno e Marrone - Só Modão",
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Gusttavo-Lima-Bruno-e-Marrone-So-Modao.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/08/Gusttavo-Lima-Bruno-e-Marrone-So-Modao.mp3"
         },
         {
-          "id": "sertanejo-11-aspatroas-mariliamendonca-maiaramaraisa",
-          "title": "AsPatroas MariliaMendonca MaiaraMaraisa",
+          "id": "sertanejo-11-aspatroas-mariliamendonca-maiara-maraisa",
+          "title": "AsPatroas #MaríliaMendonça #Maiara&Maraisa",
           "tags": [
             "MaríliaMendonça",
             "Maiara&Maraisa"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/AsPatroas-MariliaMendonca-MaiaraMaraisa.mp3"
+          "src": ""
         },
         {
           "id": "sertanejo-12-joatham-elder-souza-modao-akustico-derramado",
-          "title": "Joatham Elder Souza Modao Akustico Derramado",
+          "title": "Joatham & Elder Souza - Modao Akustico Derramado",
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Joatham-Elder-Souza-Modao-Akustico-Derramado-.mp3"
+          "src": ""
         },
         {
           "id": "sertanejo-13-joathan-freitas-niver",
@@ -1090,15 +1018,15 @@
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Joathan-Freitas-Niver.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/05/Joathan-Freitas-Niver.mp3"
         },
         {
           "id": "sertanejo-14-joathan-rancho-lima-akustico",
-          "title": "Joathan Rancho Lima Akustico",
+          "title": "Joathan -Rancho Lima- Akustico",
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Joathan-Rancho-Lima-Akustico.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/06/Joathan-Rancho-Lima-Akustico.mp3"
         },
         {
           "id": "sertanejo-15-clayton-romario-nochurrasco",
@@ -1112,32 +1040,32 @@
         },
         {
           "id": "sertanejo-16-gino-geno-as-melhores-novas-e-antigas",
-          "title": "Gino & Geno As Melhores Novas e Antigas",
+          "title": "Gino & Geno -As Melhores Novas e Antigas",
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Gino-Geno-As-Melhores-Novas-e-Antigas.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/07/Gino-Geno-As-Melhores-Novas-e-Antigas.mp3"
         },
         {
-          "id": "sertanejo-17-hugo-guilherme-nopelo02",
-          "title": "Hugo&Guilherme #NoPelo02",
+          "id": "sertanejo-17-hugo-guilherme-nopelo-vol-02",
+          "title": "Hugo&Guilherme #NoPelo Vol.02",
           "tags": [
             "NoPelo"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/HugoGuilherme-NoPelo02.mp3"
+          "src": ""
         },
         {
-          "id": "sertanejo-18-hugoguilherme-remake-grandessucessos",
-          "title": "HugoGuilherme Remake GrandesSucessos",
+          "id": "sertanejo-18-hugo-guilherme-remake-grandessucessos",
+          "title": "Hugo&Guilherme #Remake #GrandesSucessos",
           "tags": [
             "Remake",
             "GrandesSucessos"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/HugoGuilherme-Remake-GrandesSucessos.mp3"
+          "src": ""
         },
         {
           "id": "sertanejo-19-rogermodao-livesertanejo-canellasvg",
@@ -1156,7 +1084,7 @@
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Fernando-Sorocaba-Ao-Vivo-Jaguariuna-2024.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/12/Fernando-Sorocaba-Ao-Vivo-Jaguariuna-2024.mp3"
         },
         {
           "id": "sertanejo-21-marcio-art-ao-vivo-cantando-sucessos-do-pagode-90",
@@ -1164,33 +1092,33 @@
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Marcio-Art-Ao-Vivo-cantando-Sucessos-do-Pagode-90.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/08/Marcio-Art-Ao-Vivo-cantando-Sucessos-do-Pagode-90.mp3"
         },
         {
           "id": "sertanejo-22-pagode-no-quintal-encontro-de-batuqueiros",
-          "title": "Pagode no Quintal Encontro de Batuqueiros",
+          "title": "Pagode no Quintal - Encontro de Batuqueiros",
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Pagode-no-Quintal-Encontro-de-Batuqueiros-1.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/08/Pagode-no-Quintal-Encontro-de-Batuqueiros-1.mp3"
         },
         {
           "id": "sertanejo-23-sorriso-maroto-completo-amigos-2024",
-          "title": "Sorriso Maroto Completo + Amigos 2024",
+          "title": "Sorriso Maroto - Completo + Amigos 2024",
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Sorriso-Maroto-Completo-Amigos-2024.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/01/Sorriso-Maroto-Completo-Amigos-2024.mp3"
         },
         {
           "id": "sertanejo-24-bokaloka-rodadesamba",
-          "title": "BokaLoka RodadeSamba",
+          "title": "BokaLoka #RodadeSamba",
           "tags": [
             "RodadeSamba"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/BokaLoka-RodadeSamba.mp3"
+          "src": ""
         },
         {
           "id": "sertanejo-25-molejo-programaresenhamusical",
@@ -1200,41 +1128,41 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Molejo-ProgramaResenhaMusical.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/01/Molejo-ProgramaResenhaMusical.mp3"
         },
         {
           "id": "sertanejo-26-resenhado-totequerendo",
-          "title": "Resenhado ToTeQuerendo",
+          "title": "Resenhado #TôTeQuerendo",
           "tags": [
             "TôTeQuerendo"
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Resenhado-ToTeQuerendo.mp3"
+          "src": ""
         },
         {
           "id": "sertanejo-27-thiago-martins-quintal-do-tg-morro-vidigal-rj",
-          "title": "Thiago Martins Quintal do TG Morro Vidigal RJ",
+          "title": "Thiago Martins Quintal do TG -Morro Vidigal RJ-",
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Thiago-Martins-Quintal-do-TG-Morro-Vidigal-RJ-.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/04/Thiago-Martins-Quintal-do-TG-Morro-Vidigal-RJ-.mp3"
         },
         {
           "id": "sertanejo-28-quinteto-ao-vivo-em-belem",
-          "title": "Quinteto Ao Vivo em Belém",
+          "title": "Quinteto -Ao Vivo em Belém-",
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Quinteto-Ao-Vivo-em-Belem-.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/04/Quinteto-Ao-Vivo-em-Belem-.mp3"
         },
         {
-          "id": "sertanejo-29-quinteto-floripa",
-          "title": "Quinteto Floripa",
+          "id": "sertanejo-29-quinteto-florianopolis-sc",
+          "title": "Quinteto Florianópolis SC",
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Quinteto-Floripa.mp3"
+          "src": ""
         },
         {
           "id": "sertanejo-30-thiagosoares-sambadafeira",
@@ -1244,7 +1172,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/ThiagoSoares-SambadaFeira.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/04/ThiagoSoares-SambadaFeira.mp3"
         },
         {
           "id": "sertanejo-31-hiphop-01",
@@ -1252,7 +1180,7 @@
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/HipHop-01.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/01/HipHop-01.mp3"
         },
         {
           "id": "sertanejo-32-hiphop-02",
@@ -1260,7 +1188,7 @@
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/HipHop-02.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/01/HipHop-02.mp3"
         },
         {
           "id": "sertanejo-33-bruno-marrone-live-casa",
@@ -1268,7 +1196,7 @@
           "tags": [],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Bruno-Marrone-Live-Casa.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2024/08/Bruno-Marrone-Live-Casa.mp3"
         },
         {
           "id": "sertanejo-34-thiagosoares-poutpourri",
@@ -1278,7 +1206,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/ThiagoSoares-PoutPourri.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/04/ThiagoSoares-PoutPourri.mp3"
         },
         {
           "id": "sertanejo-35-mixados-sertanejos-poutpourri-modaviola2021",
@@ -1290,7 +1218,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Mixados-Sertanejos-PoutPourri-ModaViola2021.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/02/Mixados-Sertanejos-PoutPourri-ModaViola2021.mp3"
         },
         {
           "id": "sertanejo-36-mixados-sertanejos-poutpourri-modaviola2020",
@@ -1302,15 +1230,7 @@
           ],
           "bpm": null,
           "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Mixados-Sertanejos-PoutPourri-ModaViola2020.mp3"
-        },
-        {
-          "id": "sertanejo-37-ze-ramalho-ritmo-seresta-mix",
-          "title": "Ze Ramalho Ritmo Seresta Mix",
-          "tags": [],
-          "bpm": null,
-          "dur": "",
-          "src": "https://rogeriomessdj.com.br/media/Ze-Ramalho-Ritmo-Seresta-Mix.mp3"
+          "src": "https://rogeriomessdj.com.br/wp-content/uploads/2023/02/Mixados-Sertanejos-PoutPourri-ModaViola2020.mp3"
         }
       ]
     }

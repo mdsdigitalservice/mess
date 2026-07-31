@@ -1,0 +1,3 @@
+node_modules/
+.overclock-app/
+*.log
