@@ -1,0 +1,19 @@
+node_modules/
+.next/
+out/
+tsconfig.tsbuildinfo
+
+# segredos — nunca commitar
+.env
+.env.local
+.env.*.local
+
+# dados persistentes — vivem no servidor, não no git
+data/*.db
+data/*.db-journal
+data/*.db-wal
+data/*.db-shm
+public/media/*
+!public/media/.gitkeep
+
+npm-debug.log*

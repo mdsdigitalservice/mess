@@ -956,9 +956,10 @@
     },
     {
       "id": "sertanejo",
-      "label": "Sertanejo & Pagode",
-      "short": "Sertanejo",
-      "blurb": "Modão, pagode e sertanejo — do raiz ao pisadinha, ao vivo e mixado.",
+      "label": "Sertanejo / Lambadão",
+      "short": "Sertanejo/Lambadão",
+      "symbol": "SL",
+      "blurb": "Modão, lambadão e sertanejo — do raiz ao pisadinha, ao vivo e mixado.",
       "count": 37,
       "tracks": [
         {
