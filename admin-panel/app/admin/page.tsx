@@ -1,15 +1,16 @@
 import AdminDashboard from '@/components/AdminDashboard';
-import { getDb } from '@/lib/db';
+import db from '@/lib/db';
 import type { Track } from '@/lib/types';
 
 // Nunca pré-renderizar estático: é dado que muda a cada upload/edição, e a
 // rota já está atrás de auth — cache estático não faz sentido aqui.
 export const dynamic = 'force-dynamic';
 
-export default async function AdminPage() {
-  const db = await getDb();
-  const result = await db.execute('SELECT * FROM tracks ORDER BY id DESC LIMIT 100');
-  const tracks = result.rows as unknown as Track[];
+export default function AdminPage() {
+  const rows = db.prepare('SELECT * FROM tracks ORDER BY id DESC LIMIT 100').all() as Track[];
+  // node:sqlite retorna linhas com prototype null — React Server Components só
+  // aceita objeto plano como prop pra Client Component, então precisa "replanar".
+  const tracks = rows.map((t) => ({ ...t }));
 
   return (
     <div>

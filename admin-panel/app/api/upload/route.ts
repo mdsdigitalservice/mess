@@ -1,7 +1,10 @@
+import crypto from 'node:crypto';
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { getDb } from '@/lib/db';
+import db from '@/lib/db';
+import { MEDIA_DIR } from '@/lib/paths';
 import { rateLimit } from '@/lib/rate-limit';
 
 export const runtime = 'nodejs';
@@ -25,8 +28,7 @@ const MetaSchema = z.object({
 });
 
 // Nunca confiar na extensão/nome enviado pelo cliente para decidir o tipo —
-// checa os bytes reais do arquivo (mesma checagem replicada no upload.php,
-// já que ele também recebe uploads diretamente em testes manuais).
+// checa os bytes reais do arquivo.
 function looksLikeAudio(buf: Buffer, ext: string): boolean {
   if (buf.length < 12) return false;
   if (ext === 'mp3') {
@@ -39,17 +41,21 @@ function looksLikeAudio(buf: Buffer, ext: string): boolean {
   return false;
 }
 
+function slugify(input: string): string {
+  const base = input
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 80);
+  return base || 'faixa';
+}
+
 export async function POST(req: NextRequest) {
   const ip = req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'local';
   if (!rateLimit(`upload:${ip}`, 20, 60 * 60 * 1000)) {
     return NextResponse.json({ error: 'Limite de uploads por hora atingido.' }, { status: 429 });
-  }
-
-  const bridgeUrl = process.env.UPLOAD_BRIDGE_URL;
-  const bridgeToken = process.env.UPLOAD_BRIDGE_TOKEN;
-  if (!bridgeUrl || !bridgeToken) {
-    console.error('UPLOAD_BRIDGE_URL / UPLOAD_BRIDGE_TOKEN não configurados.');
-    return NextResponse.json({ error: 'Upload não configurado no servidor.' }, { status: 500 });
   }
 
   let form: FormData;
@@ -94,47 +100,40 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // Encaminha servidor-a-servidor pro bridge PHP no cPanel — ele que grava o
-  // arquivo fisicamente em public_html/media/ e devolve a URL pública final.
-  // O token nunca é exposto ao navegador (só existe aqui, nas env vars do
-  // servidor Next.js) e no upload-secret.php do lado do cPanel.
-  const bridgeForm = new FormData();
-  bridgeForm.append('title', parsed.data.title);
-  bridgeForm.append('file', file, file.name);
-
-  let bridgeJson: { ok?: boolean; url?: string; error?: string };
-  try {
-    const bridgeRes = await fetch(bridgeUrl, {
-      method: 'POST',
-      headers: { 'X-Upload-Token': bridgeToken },
-      body: bridgeForm,
-    });
-    bridgeJson = await bridgeRes.json().catch(() => ({}));
-    if (!bridgeRes.ok || !bridgeJson.ok || !bridgeJson.url) {
-      return NextResponse.json(
-        { error: bridgeJson.error || 'Falha ao salvar o arquivo no servidor de mídia.' },
-        { status: 502 }
-      );
-    }
-  } catch (err) {
-    console.error('Falha ao contatar o bridge de upload:', err);
-    return NextResponse.json({ error: 'Não foi possível contatar o servidor de mídia.' }, { status: 502 });
+  // Nome final é sempre gerado pelo servidor — nunca usa file.name do cliente,
+  // isso por si só já elimina qualquer risco de path traversal via nome de arquivo.
+  const safeName = `${slugify(parsed.data.title)}-${crypto.randomBytes(4).toString('hex')}.${clientExt}`;
+  const destPath = path.resolve(MEDIA_DIR, safeName);
+  if (!destPath.startsWith(MEDIA_DIR + path.sep)) {
+    return NextResponse.json({ error: 'Nome de arquivo inválido.' }, { status: 400 });
   }
 
-  const db = await getDb();
-  const result = await db.execute({
-    sql: 'INSERT INTO tracks (title, src, category, bpm, duration) VALUES (?, ?, ?, ?, ?)',
-    args: [
+  try {
+    // flag 'wx': falha em vez de sobrescrever se o nome (aleatório) já existir.
+    await fs.writeFile(destPath, bytes, { flag: 'wx' });
+  } catch {
+    return NextResponse.json({ error: 'Não foi possível salvar o arquivo. Tente novamente.' }, { status: 500 });
+  }
+
+  const src = `/media/${safeName}`;
+  try {
+    const insert = db.prepare(
+      'INSERT INTO tracks (title, src, category, bpm, duration) VALUES (?, ?, ?, ?, ?)'
+    );
+    const result = insert.run(
       parsed.data.title,
-      bridgeJson.url,
+      src,
       parsed.data.category,
       parsed.data.bpm ?? null,
-      parsed.data.duration || null,
-    ],
-  });
-
-  const trackId = Number(result.lastInsertRowid);
-  const select = await db.execute({ sql: 'SELECT * FROM tracks WHERE id = ?', args: [trackId] });
-
-  return NextResponse.json({ track: select.rows[0] }, { status: 201 });
+      parsed.data.duration || null
+    );
+    const track = db.prepare('SELECT * FROM tracks WHERE id = ?').get(result.lastInsertRowid);
+    return NextResponse.json({ track }, { status: 201 });
+  } catch (err) {
+    // Banco falhou depois do arquivo já gravado — remove o órfão para não
+    // vazar disco em cada tentativa que falhar nesse ponto.
+    await fs.unlink(destPath).catch(() => {});
+    console.error('Falha ao inserir track após upload:', err);
+    return NextResponse.json({ error: 'Falha ao salvar no banco de dados.' }, { status: 500 });
+  }
 }

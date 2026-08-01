@@ -1,60 +1,43 @@
-import { createClient, type Client } from '@libsql/client';
+import path from 'node:path';
+import { DatabaseSync } from 'node:sqlite';
+import { DATA_DIR } from './paths';
 import type { Track } from './types';
 
 export type { Track };
 
-// Turso (libSQL sobre HTTP) em vez de node:sqlite: a Vercel roda funções
-// serverless com disco efêmero/somente-leitura — um arquivo SQLite local
-// não sobrevive entre requests. Turso fala o mesmo dialeto SQL, mas guarda
-// os dados remotamente, então funciona nesse tipo de hospedagem.
+// node:sqlite (built-in desde o Node 22.5, sem flag a partir do Node 23) em vez
+// de better-sqlite3: zero módulo nativo para compilar no deploy. Isso importa
+// de verdade aqui — a VPS cPanel não tem garantia de toolchain de build
+// (python/gcc) disponível, e é exatamente o tipo de ambiente onde node-gyp falha.
 declare global {
   // eslint-disable-next-line no-var
-  var __messTurso: Client | undefined;
-  // eslint-disable-next-line no-var
-  var __messSchemaReady: Promise<void> | undefined;
+  var __messDb: DatabaseSync | undefined;
 }
 
-function requiredEnv(name: string): string {
-  const value = process.env[name];
-  if (!value) {
-    throw new Error(`Variável de ambiente ${name} não configurada.`);
-  }
-  return value;
-}
+const DB_PATH = path.join(DATA_DIR, 'admin.db');
 
-function getClient(): Client {
-  if (!global.__messTurso) {
-    global.__messTurso = createClient({
-      url: requiredEnv('TURSO_DATABASE_URL'),
-      authToken: requiredEnv('TURSO_AUTH_TOKEN'),
-    });
-  }
-  return global.__messTurso;
-}
+// Reaproveita a conexão entre hot-reloads do dev server (Next recarrega módulos
+// a cada request em dev) — sem isso, cada reload abriria um novo handle do arquivo.
+const db = global.__messDb ?? new DatabaseSync(DB_PATH);
+global.__messDb = db;
 
-async function ensureSchema(client: Client): Promise<void> {
-  await client.execute(`
-    CREATE TABLE IF NOT EXISTS tracks (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      title TEXT NOT NULL,
-      src TEXT NOT NULL,
-      category TEXT NOT NULL,
-      bpm INTEGER,
-      duration TEXT,
-      created_at TEXT NOT NULL DEFAULT (datetime('now'))
-    )
-  `);
-  await client.execute('CREATE INDEX IF NOT EXISTS idx_tracks_category ON tracks(category)');
-  await client.execute('CREATE INDEX IF NOT EXISTS idx_tracks_created_at ON tracks(created_at DESC)');
-}
+// WAL: leituras do dashboard não bloqueiam a escrita de um upload em andamento.
+db.exec('PRAGMA busy_timeout = 5000');
+db.exec('PRAGMA journal_mode = WAL');
+db.exec('PRAGMA foreign_keys = ON');
 
-// Memoiza a checagem/criação do schema entre invocações do mesmo processo —
-// evita rodar 3x "CREATE TABLE IF NOT EXISTS" a cada request.
-export async function getDb(): Promise<Client> {
-  const client = getClient();
-  if (!global.__messSchemaReady) {
-    global.__messSchemaReady = ensureSchema(client);
-  }
-  await global.__messSchemaReady;
-  return client;
-}
+db.exec(`
+  CREATE TABLE IF NOT EXISTS tracks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    src TEXT NOT NULL,
+    category TEXT NOT NULL,
+    bpm INTEGER,
+    duration TEXT,
+    created_at TEXT NOT NULL DEFAULT (datetime('now'))
+  );
+  CREATE INDEX IF NOT EXISTS idx_tracks_category ON tracks(category);
+  CREATE INDEX IF NOT EXISTS idx_tracks_created_at ON tracks(created_at DESC);
+`);
+
+export default db;

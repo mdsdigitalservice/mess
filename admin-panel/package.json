@@ -2,16 +2,19 @@
   "name": "mess-admin-panel",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22.5.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "init-db": "node --env-file=.env scripts/init-db.mjs",
+    "start": "node server.js",
+    "start:next": "next start",
+    "init-db": "node scripts/init-db.mjs",
     "create-admin": "node scripts/create-admin.mjs",
-    "migrar-dados": "node --env-file=.env scripts/migrar-dados.mjs"
+    "migrar-dados": "node scripts/migrar-dados.mjs"
   },
   "dependencies": {
-    "@libsql/client": "^0.17.4",
     "jose": "5.9.6",
     "next": "16.2.12",
     "react": "19.2.8",

@@ -1,6 +1,10 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { getDb } from '@/lib/db';
+import db from '@/lib/db';
+import { MEDIA_DIR } from '@/lib/paths';
+import type { Track } from '@/lib/types';
 
 export const runtime = 'nodejs';
 
@@ -32,29 +36,33 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ id
   if (!fields.length) return NextResponse.json({ error: 'Nada para atualizar' }, { status: 400 });
 
   const setClause = fields.map(([k]) => `${k} = ?`).join(', ');
-  const values = fields.map(([, v]) => v as string | number | null);
+  const values = fields.map(([, v]) => v);
 
-  const db = await getDb();
-  const result = await db.execute({
-    sql: `UPDATE tracks SET ${setClause} WHERE id = ?`,
-    args: [...values, idResult.data.id],
-  });
-  if (result.rowsAffected === 0) return NextResponse.json({ error: 'Faixa não encontrada' }, { status: 404 });
+  const result = db.prepare(`UPDATE tracks SET ${setClause} WHERE id = ?`).run(...values, idResult.data.id);
+  if (result.changes === 0) return NextResponse.json({ error: 'Faixa não encontrada' }, { status: 404 });
 
-  const select = await db.execute({ sql: 'SELECT * FROM tracks WHERE id = ?', args: [idResult.data.id] });
-  return NextResponse.json({ track: select.rows[0] });
+  const track = db.prepare('SELECT * FROM tracks WHERE id = ?').get(idResult.data.id);
+  return NextResponse.json({ track });
 }
 
 export async function DELETE(_req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   const idResult = ParamsSchema.safeParse(await params);
   if (!idResult.success) return NextResponse.json({ error: 'ID inválido' }, { status: 400 });
 
-  const db = await getDb();
-  const result = await db.execute({ sql: 'DELETE FROM tracks WHERE id = ?', args: [idResult.data.id] });
-  if (result.rowsAffected === 0) return NextResponse.json({ error: 'Faixa não encontrada' }, { status: 404 });
+  const track = db.prepare('SELECT * FROM tracks WHERE id = ?').get(idResult.data.id) as Track | undefined;
+  if (!track) return NextResponse.json({ error: 'Faixa não encontrada' }, { status: 404 });
 
-  // Só apaga o registro do banco — o MP3 físico continua em public_html/media/
-  // no cPanel (não temos endpoint de exclusão remota no upload.php). Limpeza
-  // de arquivo órfão, se algum dia importar, é manual ou via um endpoint futuro.
+  db.prepare('DELETE FROM tracks WHERE id = ?').run(idResult.data.id);
+
+  // Só apaga do disco arquivos que vivem dentro de MEDIA_DIR (uploads feitos
+  // por este painel) — faixas com src externo (ex: WordPress antigo) ficam intactas.
+  if (track.src?.startsWith('/media/')) {
+    const filename = track.src.slice('/media/'.length);
+    const resolved = path.resolve(MEDIA_DIR, filename);
+    if (resolved === MEDIA_DIR || resolved.startsWith(MEDIA_DIR + path.sep)) {
+      await fs.unlink(resolved).catch(() => {});
+    }
+  }
+
   return NextResponse.json({ ok: true });
 }
