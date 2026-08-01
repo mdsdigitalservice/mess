@@ -175,6 +175,7 @@ svg{display:block}
   font-family:var(--font-mono);font-size:.75rem;
   letter-spacing:.28em;text-transform:uppercase;color:var(--accent);
   margin-bottom:14px;display:inline-flex;align-items:center;gap:12px;
+  position:relative;z-index:10;
 }
 .kicker::before{content:"";width:34px;height:1px;background:var(--accent);display:inline-block}
 
@@ -691,8 +692,8 @@ footer{
       url('rogerio-mess-dj/assets/hero-mobile.webp') center top / cover no-repeat,
       #000000;
   }
-  .hero-inner{padding-top:110px;padding-bottom:40px}
-  .hero-inner .kicker{display:inline-flex!important;opacity:1!important;visibility:visible!important;margin-bottom:12px}
+  .hero-inner{padding-top:135px;padding-bottom:40px}
+  .hero-inner .kicker{position:relative;z-index:10;display:inline-flex!important;opacity:1!important;visibility:visible!important;margin-bottom:14px}
   .hero-h1{margin-bottom:14px}
   .hero-sub{font-size:.92rem;margin-bottom:20px}
   #nav{padding:0 16px;height:58px}
@@ -1130,7 +1131,7 @@ waveAreaEl.addEventListener('touchmove', e => { if(isScrubbing) handleSeek(e); }
 waveAreaEl.addEventListener('touchend', () => { isScrubbing = false; });
 waveAreaEl.addEventListener('click', handleSeek);
 
-fetch('rogerio-mess-dj/data/sets.json')
+fetch('https://painel.rogeriomessdj.com.br/api/sets')
   .then(r=>r.json())
   .then(d=>{DATA=d;renderTabs();selectSection(0);})
   .catch(()=>{tlist.innerHTML='<div style="padding:24px 28px;color:var(--fg-3)">Não foi possível carregar os sets.</div>';});
