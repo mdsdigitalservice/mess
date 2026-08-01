@@ -38,7 +38,8 @@ function extractTags(title: string): string[] {
 // o middleware não bloqueia) e com CORS liberado: o site principal
 // (rogeriomessdj.com.br) busca isso de outro subdomínio (painel.*).
 export async function GET() {
-  const rows = db.prepare('SELECT * FROM tracks ORDER BY id ASC').all() as Track[];
+  // DESC: upload mais recente aparece primeiro em cada seção do player.
+  const rows = db.prepare('SELECT * FROM tracks ORDER BY id DESC').all() as Track[];
 
   const byCategory = new Map<string, Track[]>();
   for (const row of rows) {
