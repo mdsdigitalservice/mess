@@ -2,8 +2,5 @@
 deployment:
   tasks:
     - export SITEPATH=/home/rogeriomessdj/public_html/
-    - export APPPATH=/home/rogeriomessdj/rogeriomessdj.com.br/
     - /bin/cp -R index.html favicon.png imagens rogerio-mess-dj $SITEPATH
-    - /bin/cp -R admin-panel/* $APPPATH
-    - cd $APPPATH && npm ci --omit=dev
-    - touch $APPPATH/tmp/restart.txt
+    - /bin/cp cpanel-bridge/upload.php $SITEPATH

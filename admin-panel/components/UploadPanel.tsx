@@ -20,7 +20,7 @@ export default function UploadPanel({ onUploaded }: { onUploaded: (track: Track)
 
     const file = formData.get('file');
     if (!(file instanceof File) || file.size === 0) {
-      setError('Selecione um arquivo .mp3.');
+      setError('Selecione um arquivo .mp3 ou .wav.');
       return;
     }
 
@@ -84,20 +84,20 @@ export default function UploadPanel({ onUploaded }: { onUploaded: (track: Track)
 
         <div className="sm:col-span-2">
           <label htmlFor="file" className="mb-1.5 block font-mono text-[.68rem] uppercase tracking-wider text-fg-3">
-            Arquivo MP3
+            Arquivo de áudio
           </label>
           <label
             htmlFor="file"
             className="flex cursor-pointer items-center justify-between rounded-lg border border-dashed border-bg3 bg-bg2 px-3.5 py-3 text-sm text-fg-3 transition hover:border-accent hover:text-fg"
           >
-            <span className="truncate">{fileName || 'Escolher arquivo .mp3…'}</span>
+            <span className="truncate">{fileName || 'Escolher arquivo .mp3 ou .wav…'}</span>
             <span className="ml-3 shrink-0 font-mono text-[.68rem] uppercase tracking-wider text-accent">Selecionar</span>
           </label>
           <input
             id="file"
             name="file"
             type="file"
-            accept="audio/mpeg,.mp3"
+            accept="audio/mpeg,.mp3,audio/wav,audio/x-wav,.wav"
             required
             className="sr-only"
             onChange={(e) => setFileName(e.target.files?.[0]?.name ?? null)}

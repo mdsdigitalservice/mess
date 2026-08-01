@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import db from '@/lib/db';
-import type { Track } from '@/lib/types';
+import { getDb } from '@/lib/db';
 
 export const runtime = 'nodejs';
 
@@ -23,23 +22,26 @@ export async function GET(req: NextRequest) {
   // Paginação por cursor (id decrescente) em vez de OFFSET: custo constante
   // por página mesmo que a tabela cresça muito além dos ~120 sets atuais.
   const clauses: string[] = [];
-  const params: (string | number)[] = [];
+  const args: (string | number)[] = [];
 
   if (category) {
     clauses.push('category = ?');
-    params.push(category);
+    args.push(category);
   }
   if (cursor !== null) {
     clauses.push('id < ?');
-    params.push(cursor);
+    args.push(cursor);
   }
 
   const where = clauses.length ? `WHERE ${clauses.join(' AND ')}` : '';
-  const tracks = db
-    .prepare(`SELECT * FROM tracks ${where} ORDER BY id DESC LIMIT ?`)
-    .all(...params, limit) as Track[];
+  const db = await getDb();
+  const result = await db.execute({
+    sql: `SELECT * FROM tracks ${where} ORDER BY id DESC LIMIT ?`,
+    args: [...args, limit],
+  });
 
-  const nextCursor = tracks.length === limit ? tracks[tracks.length - 1].id : null;
+  const tracks = result.rows;
+  const nextCursor = tracks.length === limit ? (tracks[tracks.length - 1].id as number) : null;
 
   return NextResponse.json({ tracks, nextCursor });
 }
