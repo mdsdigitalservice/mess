@@ -220,7 +220,7 @@ svg{display:block}
 }
 @keyframes radar{from{transform:scale(1)}to{transform:scale(1.25)}}
 .hero-inner{
-  position:relative;z-index:2;padding-top:100px;
+  position:relative;z-index:2;padding-top:100px;padding-bottom:60px;
   max-width:680px;margin:0;width:100%;
 }
 .hero-h1{
@@ -239,16 +239,6 @@ svg{display:block}
 .hero-h1{opacity:0;transform:translateY(20px);animation:fadein .7s .2s var(--ease-out) forwards}
 .hero-sub{opacity:0;transform:translateY(16px);animation:fadein .6s .35s var(--ease-out) forwards}
 .hero-ctas{opacity:0;transform:translateY(16px);animation:fadein .6s .5s var(--ease-out) forwards}
-.hero-wave{
-  display:flex;align-items:center;gap:14px;
-  margin-top:36px;margin-bottom:56px;
-  opacity:0;transform:translateY(16px);animation:fadein .6s .65s var(--ease-out) forwards;
-}
-.hero-wave canvas{width:340px;height:56px;display:block}
-.hero-wave .t{font-family:var(--font-mono);font-size:12px;color:var(--fg-2);font-variant-numeric:tabular-nums}
-@media(max-width:860px){
-  .hero-wave canvas{width:220px;height:44px}
-}
 @keyframes fadein{to{opacity:1;transform:none}}
 
 /* ── MARQUEE ─────────────────────────────────────── */
@@ -797,7 +787,7 @@ footer{
     animation-duration:.01ms!important;animation-iteration-count:1!important;
     transition-duration:.01ms!important;
   }
-  .hero-inner .kicker,.hero-h1,.hero-sub,.hero-ctas,.hero-wave,.reveal{
+  .hero-inner .kicker,.hero-h1,.hero-sub,.hero-ctas,.reveal{
     opacity:1!important;transform:none!important;
   }
 }
@@ -854,10 +844,6 @@ footer{
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"/></svg>
         Ouvir Sets
       </a>
-    </div>
-    <div class="hero-wave">
-      <canvas id="eq" width="680" height="112"></canvas>
-      <span class="t" id="time">00:00 / 58:24</span>
     </div>
   </div>
 </section>
@@ -1252,33 +1238,6 @@ aud.addEventListener('error',()=>setLoading(false));
 aud.addEventListener('ended',()=>{setPlayState(false);setLoading(false);prog=0;setProgress(0);});
 aud.addEventListener('pause',()=>{setPlayState(false);setLoading(false);});
 aud.addEventListener('play',()=>setPlayState(true));
-
-// Animated equalizer waveform for hero
-(function(){
-  const cv=document.getElementById('eq');
-  if(!cv) return;
-  const cx=cv.getContext('2d');
-  const N=68,prog=.34;let t=0;
-  const reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
-  function draw(){
-    if(!reduced)t+=.05;
-    const w=cv.width,h=cv.height,bw=w/N;
-    cx.clearRect(0,0,w,h);
-    for(let i=0;i<N;i++){
-      const base=Math.abs(Math.sin(i*.4)*Math.sin(i*.13+1))*.6+.12;
-      const live=base*(.7+.3*Math.sin(t+i*.5));
-      const bh=Math.max(3,live*h*.9),x=i*bw,y=(h-bh)/2;
-      const played=i/N<prog;
-      cx.fillStyle=played?'#E31F25':'#4A4E56';
-      cx.globalAlpha=played?.95:.5;
-      const r=bw*.28;cx.beginPath();
-      cx.roundRect(x+bw*.18,y,bw*.64,bh,r);cx.fill();
-    }
-    cx.globalAlpha=1;
-    if(!reduced)requestAnimationFrame(draw);
-  }
-  draw();
-})();
 
 // Dock mobile rail above footer on scroll
 const mobrailEl = document.querySelector('.mobrail');

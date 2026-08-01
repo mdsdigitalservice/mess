@@ -176,10 +176,6 @@ footer img{height:16px;opacity:.7}
       <a class="btn ghost" href="#">Contratar</a>
     </div>
   </div>
-  <div class="wave">
-    <canvas id="eq" width="680" height="112"></canvas>
-    <span class="t" id="time">00:00 / 58:24</span>
-  </div>
 </header>
 
 <div class="marquee">
@@ -242,24 +238,6 @@ const io=new IntersectionObserver((es)=>es.forEach(e=>{
 document.querySelectorAll('.reveal,.card').forEach((el,i)=>{
   if(el.classList.contains('card'))el.style.transitionDelay=(i*110)+'ms';io.observe(el);});
 
-// animated equalizer waveform (progress sweep + live bars)
-const cv=document.getElementById('eq'),cx=cv.getContext('2d');
-const N=68,prog=.34;let t=0;
-function draw(){t+=.05;const w=cv.width,h=cv.height,bw=w/N;
-  cx.clearRect(0,0,w,h);
-  for(let i=0;i<N;i++){
-    const base=Math.abs(Math.sin(i*.4)*Math.sin(i*.13+1))*.6+.12;
-    const live=base*(.7+.3*Math.sin(t+i*.5));
-    const bh=Math.max(3,live*h*.9),x=i*bw,y=(h-bh)/2;
-    const played=i/N<prog;
-    cx.fillStyle=played?'#E31E24':'#4A4E56';
-    cx.globalAlpha=played?.95:.5;
-    const r=bw*.28;cx.beginPath();
-    cx.roundRect(x+bw*.18,y,bw*.64,bh,r);cx.fill();
-  }
-  cx.globalAlpha=1;requestAnimationFrame(draw);
-}
-if(!matchMedia('(prefers-reduced-motion:reduce)').matches)draw();else{t=0;draw();}
 </script>
 </body>
 </html>
