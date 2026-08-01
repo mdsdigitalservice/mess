@@ -516,8 +516,19 @@ svg{display:block}
 .mini-bar:nth-child(2){animation-delay:.11s}
 .mini-bar:nth-child(3){animation-delay:.22s}
 @keyframes mdance{from{height:3px}to{height:14px}}
-.tp{font-family:var(--font-display);font-weight:400;font-size:.95rem;display:flex;align-items:center;gap:10px;min-width:0}
+.tp{font-family:var(--font-display);font-weight:400;font-size:.95rem;display:flex;align-items:center;gap:10px;min-width:0;overflow:hidden}
 .tp-t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.tp-t.is-looping,
+.ph-title.is-looping{
+  text-overflow:clip!important;
+  overflow:visible!important;
+  animation:winamp-scroll 6.5s ease-in-out infinite alternate;
+  will-change:transform;
+}
+@keyframes winamp-scroll{
+  0%,18%{transform:translateX(0)}
+  82%,100%{transform:translateX(var(--over,0px))}
+}
 .chip-g{flex-shrink:0}
 .trow.active .tp{color:var(--accent)}
 .chip-g{
@@ -1142,6 +1153,7 @@ function selectSection(i, fromClick){
   if(sec.tracks && sec.tracks.length > 0 && !playing){
     loadTrack(sec.tracks[0], false);
   }
+  markActiveRow();
   if(fromClick){
     const pw = document.getElementById('playerWrap');
     if(pw){
@@ -1156,8 +1168,28 @@ function selectSection(i, fromClick){
 function markActiveRow(){
   tlist.querySelectorAll('.trow').forEach(r=>{
     const t=DATA.sections[secIdx].tracks[+r.dataset.i];
-    r.classList.toggle('active',t===cur);
+    const isAct = t===cur;
+    r.classList.toggle('active', isAct);
+    const tpT = r.querySelector('.tp-t');
+    if(tpT){
+      tpT.classList.remove('is-looping');
+      tpT.style.removeProperty('--over');
+      if(isAct && tpT.scrollWidth > tpT.clientWidth + 2){
+        const over = tpT.scrollWidth - tpT.clientWidth;
+        tpT.style.setProperty('--over', `-${over + 12}px`);
+        tpT.classList.add('is-looping');
+      }
+    }
   });
+  if(phTitle){
+    phTitle.classList.remove('is-looping');
+    phTitle.style.removeProperty('--over');
+    if(phTitle.scrollWidth > phTitle.clientWidth + 2){
+      const over = phTitle.scrollWidth - phTitle.clientWidth;
+      phTitle.style.setProperty('--over', `-${over + 12}px`);
+      phTitle.classList.add('is-looping');
+    }
+  }
 }
 
 function fmt(s){s=Math.floor(s);const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sc=s%60;return h>0?`${h}:${String(m).padStart(2,'0')}:${String(sc).padStart(2,'0')}`:`${m}:${String(sc).padStart(2,'0')}`;}
@@ -1295,6 +1327,7 @@ if(mobrailEl && footerEl){
   window.addEventListener('resize', updateRailPos, { passive: true });
   updateRailPos();
 }
+window.addEventListener('resize', markActiveRow, { passive: true });
 </script>
 </body>
 </html>
