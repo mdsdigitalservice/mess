@@ -41,7 +41,6 @@ async function buildDesktop() {
     { input: await glow(W, H, RED, 0.86, 0.9, 0.5, 0.28).png().toBuffer(), blend: 'screen' },        // brasa vermelha canto
     { input: await vignette(W, H, 0.5, 0.32).png().toBuffer(), blend: 'over' },
     { input: await grain(W, H, 24).png().toBuffer(), blend: 'soft-light' },
-    { input: wave, left: Math.round(W * 0.06), top: Math.round(H * 0.80) },         // waveform inferior-esq
   ]).png().toBuffer()
     .then(b => Promise.all([
       sharp(b).webp({ quality: 82 }).toFile(path.join(OUT, 'hero-desktop.webp')),
@@ -54,20 +53,18 @@ async function buildMobile() {
   const W = 1080, H = 1350;
   const subj = await darkGrade(sharp(SRC)).resize({ width: W }).toBuffer();
   const sm = await sharp(subj).metadata();
-  const top = Math.round((sm.height - H) * 0.32);      // foco no rosto (ter\u00e7o superior)
+  const top = Math.round((sm.height - H) * 0.32);      // foco no rosto (terço superior)
   const subjCrop = await sharp(subj)
     .extract({ left: 0, top: Math.max(0, Math.min(top, sm.height - H)), width: W, height: Math.min(H, sm.height) })
     .toBuffer();
 
   const canvas = sharp({ create: { width: W, height: H, channels: 4, background: { ...BG, alpha: 1 } } });
-  const wave = Buffer.from(waveformSVG(Math.round(W * 0.7), 90, { bars: 64, progress: 0.34 }));
   await canvas.composite([
     { input: subjCrop, gravity: 'north' },
     { input: await bottomScrim(W, H, 0.30, 0.99).png().toBuffer(), blend: 'over' },
     { input: await glow(W, H, RED, 0.78, 0.86, 0.55, 0.26).png().toBuffer(), blend: 'screen' },
     { input: await vignette(W, H, 0.5, 0.3).png().toBuffer(), blend: 'over' },
     { input: await grain(W, H, 24).png().toBuffer(), blend: 'soft-light' },
-    { input: wave, left: Math.round(W * 0.15), top: Math.round(H * 0.82) },
   ]).png().toBuffer()
     .then(b => Promise.all([
       sharp(b).webp({ quality: 82 }).toFile(path.join(OUT, 'hero-mobile.webp')),

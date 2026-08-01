@@ -45,6 +45,9 @@
 /* ── RESET ───────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+html, body{
+  max-width:100%;overflow-x:hidden!important;
+}
 body{
   background:var(--bg-0);color:var(--fg);
   font-family:var(--font-sans);font-size:16px;line-height:1.6;
@@ -692,10 +695,11 @@ footer{
       url('rogerio-mess-dj/assets/hero-mobile.webp') center top / cover no-repeat,
       #000000;
   }
-  .hero-inner{padding-top:135px;padding-bottom:40px}
-  .hero-inner .kicker{position:relative;z-index:10;display:inline-flex!important;opacity:1!important;visibility:visible!important;margin-bottom:14px}
-  .hero-h1{margin-bottom:14px}
-  .hero-sub{font-size:.92rem;margin-bottom:20px}
+  .wrap{padding:0 16px!important;max-width:100%!important;box-sizing:border-box!important}
+  .hero-inner{padding-top:135px!important;padding-bottom:40px!important;max-width:100%!important;box-sizing:border-box!important}
+  .hero-inner .kicker{position:relative;z-index:10;display:inline-flex!important;opacity:1!important;visibility:visible!important;transform:none!important;animation:none!important;margin-bottom:14px}
+  .hero-h1{font-size:clamp(2.1rem,7.8vw,3.2rem)!important;line-height:1.05!important;word-wrap:break-word!important;max-width:100%!important;margin-bottom:14px;opacity:1!important;visibility:visible!important;transform:none!important;animation:none!important}
+  .hero-sub{font-size:.92rem;margin-bottom:20px;max-width:100%!important;opacity:1!important;visibility:visible!important;transform:none!important;animation:none!important}
   #nav{padding:0 16px;height:58px}
   .nav-inner{justify-content:space-between;width:100%}
   .brand img{height:18px!important;max-width:175px;width:auto!important;object-fit:contain}
