@@ -3,4 +3,3 @@ deployment:
   tasks:
     - export SITEPATH=/home/rogeriomessdj/public_html/
     - /bin/cp -R index.html favicon.png imagens rogerio-mess-dj $SITEPATH
-    - /bin/cp cpanel-bridge/upload.php $SITEPATH
