@@ -241,7 +241,7 @@ svg{display:block}
 .hero-ctas{opacity:0;transform:translateY(16px);animation:fadein .6s .5s var(--ease-out) forwards}
 .hero-wave{
   display:flex;align-items:center;gap:14px;
-  margin-top:36px;margin-bottom:56px;
+  margin-top:24px;margin-bottom:28px;
   opacity:0;transform:translateY(16px);animation:fadein .6s .65s var(--ease-out) forwards;
 }
 .hero-wave canvas{width:340px;height:56px;display:block}
@@ -691,7 +691,10 @@ footer{
       url('rogerio-mess-dj/assets/hero-mobile.webp') center top / cover no-repeat,
       #000000;
   }
-  .hero-inner{padding-top:76px}
+  .hero-inner{padding-top:110px;padding-bottom:40px}
+  .hero-inner .kicker{display:inline-flex!important;opacity:1!important;visibility:visible!important;margin-bottom:12px}
+  .hero-h1{margin-bottom:14px}
+  .hero-sub{font-size:.92rem;margin-bottom:20px}
   #nav{padding:0 16px;height:58px}
   .nav-inner{justify-content:space-between;width:100%}
   .brand img{height:18px!important;max-width:175px;width:auto!important;object-fit:contain}
@@ -877,6 +880,10 @@ footer{
   <div class="wrap hero-inner">
     <span class="kicker">DJ · OPEN FORMAT</span>
     <h1 class="hero-h1">A noite certa<br>começa <em>no SET.</em></h1>
+    <p class="hero-sub">Sets para quem entende que a trilha sonora define a memória do evento.</p>
+    <div class="hero-wave">
+      <canvas id="eq" width="680" height="112"></canvas>
+    </div>
   </div>
 </section>
 
