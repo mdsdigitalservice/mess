@@ -357,7 +357,7 @@ svg{display:block}
   display:none;animation:spin .7s linear infinite;
 }
 @keyframes spin{to{transform:rotate(360deg)}}
-.ph-meta{flex:1;min-width:0}
+.ph-meta{flex:1;min-width:0;overflow:hidden}
 .ph-title{
   font-family:var(--font-display);font-weight:500;font-size:1.1rem;
   margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
@@ -517,26 +517,30 @@ svg{display:block}
 .mini-bar:nth-child(3){animation-delay:.22s}
 @keyframes mdance{from{height:3px}to{height:14px}}
 .tp{font-family:var(--font-display);font-weight:400;font-size:.95rem;display:flex;align-items:center;gap:10px;min-width:0;overflow:hidden}
-.tp-t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.tp-t{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}
 .tp-t.is-looping,
 .ph-title.is-looping{
   text-overflow:clip!important;
-  overflow:visible!important;
-  animation:winamp-scroll 6.5s ease-in-out infinite alternate;
+  overflow:hidden!important;
+}
+.tp-t.is-looping .tp-scroll,
+.ph-title.is-looping .tp-scroll{
+  display:inline-block;
+  animation:winamp-scroll 15s ease-in-out infinite alternate;
   will-change:transform;
 }
 @keyframes winamp-scroll{
-  0%,18%{transform:translateX(0)}
-  82%,100%{transform:translateX(var(--over,0px))}
+  0%,15%{transform:translateX(0)}
+  85%,100%{transform:translateX(var(--over,0px))}
 }
-.chip-g{flex-shrink:0}
-.trow.active .tp{color:var(--accent)}
 .chip-g{
   font-family:var(--font-mono);font-size:.65rem;text-transform:uppercase;
   letter-spacing:.06em;color:var(--fg-3);
-  background:var(--w-04);border-radius:var(--r-xs);padding:4px 8px;
+  background:#1E1F26;border-radius:var(--r-xs);padding:4px 8px;
+  position:relative;z-index:2;flex-shrink:0;
 }
-.trow.active .chip-g{color:var(--accent);background:var(--accent-tint)}
+.trow.active .tp{color:var(--accent)}
+.trow.active .chip-g{color:var(--accent);background:#2D1215}
 .td{font-family:var(--font-mono);font-size:.78rem;color:var(--fg-2);font-variant-numeric:tabular-nums;text-align:right}
 .td.bpm{color:var(--fg-3);text-align:left;min-width:66px}
 .bpm-n{color:var(--fg-2)}
@@ -1135,7 +1139,7 @@ function selectSection(i, fromClick){
     <span class="idx-n">${j+1}</span>
     <div class="mini-bars" aria-hidden="true"><div class="mini-bar"></div><div class="mini-bar"></div><div class="mini-bar"></div></div>
   </div>
-  <div class="tp"><span class="tp-t">${esc(t.title)}</span><span class="chip-g">${esc(chipFor(t,sec))}</span></div>
+  <div class="tp"><span class="tp-t"><span class="tp-scroll">${esc(t.title)}</span></span><span class="chip-g">${esc(chipFor(t,sec))}</span></div>
   <div class="td bpm">${t.bpm?`<span class="bpm-n">${t.bpm}</span> BPM`:''}</div>
   <div class="td">${t.dur||''}</div>
   <a class="trow-dl${t.src?'':' is-disabled'}" ${t.src?`href="${esc(t.src)}" download="${esc(t.title)}.mp3" target="_blank" rel="noopener"`:'aria-disabled="true" tabindex="-1"'} aria-label="Baixar ${esc(t.title)}">
@@ -1174,9 +1178,10 @@ function markActiveRow(){
     if(tpT){
       tpT.classList.remove('is-looping');
       tpT.style.removeProperty('--over');
-      if(isAct && tpT.scrollWidth > tpT.clientWidth + 2){
-        const over = tpT.scrollWidth - tpT.clientWidth;
-        tpT.style.setProperty('--over', `-${over + 12}px`);
+      const sc = tpT.querySelector('.tp-scroll') || tpT;
+      if(isAct && sc.scrollWidth > tpT.clientWidth + 2){
+        const over = sc.scrollWidth - tpT.clientWidth;
+        tpT.style.setProperty('--over', `-${over + 8}px`);
         tpT.classList.add('is-looping');
       }
     }
@@ -1184,9 +1189,10 @@ function markActiveRow(){
   if(phTitle){
     phTitle.classList.remove('is-looping');
     phTitle.style.removeProperty('--over');
-    if(phTitle.scrollWidth > phTitle.clientWidth + 2){
-      const over = phTitle.scrollWidth - phTitle.clientWidth;
-      phTitle.style.setProperty('--over', `-${over + 12}px`);
+    const sc = phTitle.querySelector('.tp-scroll') || phTitle;
+    if(sc.scrollWidth > phTitle.clientWidth + 2){
+      const over = sc.scrollWidth - phTitle.clientWidth;
+      phTitle.style.setProperty('--over', `-${over + 8}px`);
       phTitle.classList.add('is-looping');
     }
   }
@@ -1212,7 +1218,7 @@ function setPlayState(p){
 
 function loadTrack(t,autoplay){
   cur=t;prog=0;
-  phTitle.textContent=t.title;
+  phTitle.innerHTML='<span class="tp-scroll">'+esc(t.title)+'</span>';
   phSub.textContent=(t.tags&&t.tags.length?t.tags.slice(0,2).join(' · '):'Set')+(t.src?'':' · Prévia')+' · Rogério Mess';
   pTot.textContent=t.dur||fmt(SIM_SECS);
   if(t.src){
