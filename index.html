@@ -377,16 +377,32 @@ svg{display:block}
 .dl-btn:hover{color:var(--accent);filter:drop-shadow(0 0 6px rgba(227,31,37,.85))}
 .dl-btn.is-disabled{opacity:.25;pointer-events:none}
 .progress-wrapper{
-  margin:20px 28px 0;height:8px;
-  background:rgba(255,255,255,.08);
-  border-radius:var(--r-pill);overflow:hidden;
-  cursor:pointer;position:relative;
+  margin:8px 20px -6px;
+  padding:16px 8px;
+  cursor:pointer;
+  position:relative;
+  display:flex;
+  align-items:center;
+  touch-action:none;
+}
+.progress-track{
+  width:100%;
+  height:10px;
+  background:rgba(255,255,255,.14);
+  border-radius:var(--r-pill);
+  overflow:hidden;
+  position:relative;
+  transition:height .15s ease, background .15s ease;
+}
+.progress-wrapper:hover .progress-track,
+.progress-wrapper:active .progress-track{
+  height:13px;
+  background:rgba(255,255,255,.22);
 }
 .progress-fill{
   height:100%;width:0%;border-radius:var(--r-pill);
   background:var(--accent);
-  box-shadow:0 0 8px 1px rgba(227,31,37,.7),0 0 20px 3px rgba(227,31,37,.4);
-  transition:width .1s linear;
+  box-shadow:0 0 10px 2px rgba(227,31,37,.75),0 0 24px 4px rgba(227,31,37,.45);
 }
 .cat-tabs{
   display:grid;grid-template-columns:repeat(3,1fr);
@@ -772,7 +788,8 @@ footer{
   .dl-btn{
     width:30px;height:30px;flex-shrink:0;
   }
-  .progress-wrapper{margin:14px 16px 0}
+  .progress-wrapper{margin:4px 10px -8px;padding:18px 8px}
+  .progress-track{height:12px}
   #sets .svc-cta{
     display:flex;
     justify-content:center;
@@ -975,8 +992,10 @@ footer{
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>
         </a>
       </div>
-      <div class="progress-wrapper" id="waveArea">
-        <div class="progress-fill" id="wave" role="slider" aria-label="Progresso de reprodução" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+      <div class="progress-wrapper" id="waveArea" role="slider" aria-label="Progresso de reprodução" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <div class="progress-track">
+          <div class="progress-fill" id="wave"></div>
+        </div>
       </div>
       <div class="tlist" id="tlist"></div>
     </div>
@@ -1096,13 +1115,25 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 const curSecs=()=>cur&&cur.secs?cur.secs:SIM_SECS;
 const chipFor=(t,sec)=>((t.tags||[]).find(x=>!/^\d/.test(x))||sec.short||sec.label||'');
 
-document.getElementById('waveArea').addEventListener('click',e=>{
+const waveAreaEl = document.getElementById('waveArea');
+let isScrubbing = false;
+function handleSeek(e){
   if(!cur)return;
-  const r=e.currentTarget.getBoundingClientRect();
-  const p=Math.max(0,Math.min(1,(e.clientX-r.left)/r.width));
+  const r = waveAreaEl.getBoundingClientRect();
+  const clientX = e.touches && e.touches.length > 0 ? e.touches[0].clientX : e.clientX;
+  const p = Math.max(0, Math.min(1, (clientX - r.left) / r.width));
   setProgress(p);
-  if(cur.src && Number.isFinite(aud.duration) && aud.duration>0) aud.currentTime = p * aud.duration;
-});
+  if(cur.src && Number.isFinite(aud.duration) && aud.duration > 0){
+    aud.currentTime = p * aud.duration;
+  }
+}
+waveAreaEl.addEventListener('mousedown', e => { isScrubbing = true; handleSeek(e); });
+window.addEventListener('mousemove', e => { if(isScrubbing) handleSeek(e); });
+window.addEventListener('mouseup', () => { isScrubbing = false; });
+waveAreaEl.addEventListener('touchstart', e => { isScrubbing = true; handleSeek(e); }, {passive: true});
+waveAreaEl.addEventListener('touchmove', e => { if(isScrubbing) handleSeek(e); }, {passive: true});
+waveAreaEl.addEventListener('touchend', () => { isScrubbing = false; });
+waveAreaEl.addEventListener('click', handleSeek);
 
 fetch('rogerio-mess-dj/data/sets.json')
   .then(r=>r.json())
