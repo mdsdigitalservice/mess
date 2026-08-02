@@ -27,6 +27,11 @@ export const metadata: Metadata = {
   title: 'Painel · Rogério Mess',
   description: 'Painel administrativo dos sets — upload e catálogo',
   robots: { index: false, follow: false },
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

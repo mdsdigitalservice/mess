@@ -103,8 +103,19 @@ function LoginForm() {
       </div>
 
       {/* Painel de login */}
-      <div className="flex min-h-screen items-center justify-center px-6 py-16">
-        <div className="w-full max-w-sm">
+      <div
+        className="relative flex min-h-screen items-center justify-center overflow-hidden px-6 py-16"
+        style={{
+          backgroundImage: 'url(/dj-login-bg.webp)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center 20%',
+        }}
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-bg0/80"
+        />
+        <div className="relative w-full max-w-sm">
           <div className="mb-8 flex items-center gap-2.5 lg:hidden">
             <img src="/logo-mess.png" alt="DJ Rogério Mess" className="h-5 w-auto" />
             <span className="h-2 w-2 rounded-full bg-accent shadow-glow-sm" />
