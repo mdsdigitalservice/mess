@@ -11,7 +11,7 @@ export const runtime = 'nodejs';
 
 // Os sets ao vivo já migrados chegam a ~170MB (ver histórico de migração do WordPress).
 const MAX_FILE_BYTES = 250 * 1024 * 1024;
-const ALLOWED_EXT = ['mp3', 'wav'] as const;
+const ALLOWED_EXT = ['mp3'] as const;
 
 // form.get() de um campo ausente retorna null (não undefined) — normaliza
 // antes de validar, ou z.string().optional() rejeita o null como tipo errado.
@@ -29,16 +29,10 @@ const MetaSchema = z.object({
 
 // Nunca confiar na extensão/nome enviado pelo cliente para decidir o tipo —
 // checa os bytes reais do arquivo.
-function looksLikeAudio(buf: Buffer, ext: string): boolean {
+function looksLikeAudio(buf: Buffer): boolean {
   if (buf.length < 12) return false;
-  if (ext === 'mp3') {
-    if (buf[0] === 0x49 && buf[1] === 0x44 && buf[2] === 0x33) return true; // "ID3"
-    return buf[0] === 0xff && (buf[1] & 0xe0) === 0xe0; // frame sync MPEG
-  }
-  if (ext === 'wav') {
-    return buf.toString('ascii', 0, 4) === 'RIFF' && buf.toString('ascii', 8, 12) === 'WAVE';
-  }
-  return false;
+  if (buf[0] === 0x49 && buf[1] === 0x44 && buf[2] === 0x33) return true; // "ID3"
+  return buf[0] === 0xff && (buf[1] & 0xe0) === 0xe0; // frame sync MPEG
 }
 
 function slugify(input: string): string {
@@ -79,7 +73,7 @@ export async function POST(req: NextRequest) {
 
   const clientExt = path.extname(file.name).toLowerCase().replace('.', '');
   if (!ALLOWED_EXT.includes(clientExt as (typeof ALLOWED_EXT)[number])) {
-    return NextResponse.json({ error: 'Somente arquivos .mp3 ou .wav são aceitos.' }, { status: 400 });
+    return NextResponse.json({ error: 'Somente arquivos .mp3 são aceitos.' }, { status: 400 });
   }
 
   const parsed = MetaSchema.safeParse({
@@ -93,9 +87,9 @@ export async function POST(req: NextRequest) {
   }
 
   const bytes = Buffer.from(await file.arrayBuffer());
-  if (!looksLikeAudio(bytes, clientExt)) {
+  if (!looksLikeAudio(bytes)) {
     return NextResponse.json(
-      { error: `O conteúdo do arquivo não parece ser um áudio ${clientExt.toUpperCase()} válido.` },
+      { error: 'O conteúdo do arquivo não parece ser um MP3 válido.' },
       { status: 400 }
     );
   }
