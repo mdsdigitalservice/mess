@@ -7,20 +7,23 @@ export const dynamic = 'force-dynamic';
 
 // Textos fixos por categoria — mesmo conteúdo que já existia em rogerio-mess-dj/data/sets.json,
 // pra manter a aparência do site idêntica (só a fonte dos dados muda).
-const SECTION_META: Record<string, { label: string; short: string; blurb: string }> = {
+const SECTION_META: Record<string, { label: string; short: string; symbol: string; blurb: string }> = {
   house: {
     label: 'House',
     short: 'House',
+    symbol: 'HO',
     blurb: 'Do comercial ao melodic techno — a espinha dorsal dos sets de pista.',
   },
   flashback: {
     label: "FlashBack's",
     short: 'FlashBack',
+    symbol: 'FB',
     blurb: 'Dos anos 80 aos 2010 — pop, rock, tribal e dance que enchem a pista de nostalgia.',
   },
   sertanejo: {
     label: 'Sertanejo / Lambadão',
     short: 'Sertanejo/Lambadão',
+    symbol: 'SE',
     blurb: 'Modão, lambadão e sertanejo — do raiz ao pisadinha, ao vivo e mixado.',
   },
 };
@@ -50,11 +53,12 @@ export async function GET() {
 
   const sections = CATEGORY_ORDER.filter((cat) => byCategory.has(cat)).map((cat) => {
     const tracks = byCategory.get(cat)!;
-    const meta = SECTION_META[cat] ?? { label: cat, short: cat, blurb: '' };
+    const meta = SECTION_META[cat] ?? { label: cat, short: cat, symbol: cat.slice(0, 2).toUpperCase(), blurb: '' };
     return {
       id: cat,
       label: meta.label,
       short: meta.short,
+      symbol: meta.symbol,
       blurb: meta.blurb,
       count: tracks.length,
       tracks: tracks.map((t) => ({
