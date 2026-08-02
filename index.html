@@ -173,6 +173,37 @@ svg{display:block}
 }
 .btn-ghost:hover{border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.12)}
 
+/* ── SOCIAL LOCKER (Follow to Download) ──────────── */
+.lock-overlay{
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(0,0,0,.75);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  opacity:0;transition:opacity var(--dur-med) var(--ease-out);
+}
+.lock-overlay[hidden]{display:none}
+.lock-overlay.is-open{opacity:1}
+.lock-modal{
+  position:relative;width:100%;max-width:380px;
+  background:var(--bg-1);border:1px solid var(--w-08);border-radius:var(--r-md);
+  padding:32px 28px;text-align:left;
+  transform:translateY(12px) scale(.98);transition:transform var(--dur-med) var(--ease-out);
+  box-shadow:0 24px 64px -12px rgba(0,0,0,.6);
+}
+.lock-overlay.is-open .lock-modal{transform:translateY(0) scale(1)}
+.lock-close{
+  position:absolute;top:16px;right:16px;
+  width:32px;height:32px;display:flex;align-items:center;justify-content:center;
+  color:var(--fg-3);border-radius:var(--r-pill);transition:color var(--dur-fast),background var(--dur-fast);
+}
+.lock-close:hover{color:var(--fg);background:var(--w-06)}
+.lock-h{font-family:var(--font-display);font-size:1.4rem;font-weight:700;line-height:1.2;margin-bottom:12px}
+.lock-h em{font-style:normal;color:var(--accent)}
+.lock-p{font-size:.85rem;color:var(--fg-2);line-height:1.6;margin-bottom:22px}
+.lock-follow{width:100%;justify-content:center}
+.lock-verify{width:100%;justify-content:center;margin-top:10px;opacity:.4;cursor:not-allowed}
+.lock-verify:not(:disabled){opacity:1;cursor:pointer}
+.lock-verify:disabled:hover{transform:none}
+
 /* ── KICKER ──────────────────────────────────────── */
 .kicker{
   font-family:var(--font-mono);font-size:.75rem;
@@ -1063,6 +1094,22 @@ footer{
   </div>
 </footer>
 
+<div class="lock-overlay" id="lockOverlay" hidden>
+  <div class="lock-modal" role="dialog" aria-modal="true" aria-labelledby="lockTitle">
+    <button class="lock-close" id="lockClose" aria-label="Fechar">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <span class="kicker" style="margin-bottom:14px">Antes de baixar</span>
+    <h3 id="lockTitle" class="lock-h">Segue no Instagram<br>pra liberar o <em>download.</em></h3>
+    <p class="lock-p">Segue o perfil do Rogério Mess — depois é só voltar aqui e clicar em verificar. Libera esse e todos os próximos downloads.</p>
+    <a href="https://www.instagram.com/rogeriomess/" target="_blank" rel="noopener" class="btn btn-accent lock-follow" id="lockFollowBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      Seguir @rogeriomess
+    </a>
+    <button class="btn btn-ghost lock-verify" id="lockVerifyBtn" disabled>Já segui — verificar e baixar</button>
+  </div>
+</div>
+
 <script>
 window.addEventListener('scroll',()=>{
   document.getElementById('nav').classList.toggle('stuck',scrollY>60);
@@ -1135,6 +1182,61 @@ waveAreaEl.addEventListener('touchmove', e => { if(isScrubbing) handleSeek(e); }
 waveAreaEl.addEventListener('touchend', () => { isScrubbing = false; });
 waveAreaEl.addEventListener('click', handleSeek);
 
+/* ── SOCIAL LOCKER (Follow to Download) ─────────── */
+const LOCK_KEY='mess_ig_unlocked';
+const lockOverlay=document.getElementById('lockOverlay');
+const lockClose=document.getElementById('lockClose');
+const lockFollowBtn=document.getElementById('lockFollowBtn');
+const lockVerifyBtn=document.getElementById('lockVerifyBtn');
+let pendingDownload=null;
+
+function isUnlocked(){
+  try{return localStorage.getItem(LOCK_KEY)==='1';}catch{return false;}
+}
+function unlock(){
+  try{localStorage.setItem(LOCK_KEY,'1');}catch{}
+}
+function openLock(href,download){
+  pendingDownload={href,download};
+  lockVerifyBtn.disabled=true;
+  lockOverlay.hidden=false;
+  requestAnimationFrame(()=>{lockOverlay.classList.add('is-open');lockFollowBtn.focus();});
+  document.body.style.overflow='hidden';
+}
+function closeLock(){
+  lockOverlay.classList.remove('is-open');
+  document.body.style.overflow='';
+  setTimeout(()=>{lockOverlay.hidden=true;},300);
+}
+function triggerDownload(href,download){
+  const a=document.createElement('a');
+  a.href=href;a.download=download||'';a.rel='noopener';
+  document.body.appendChild(a);a.click();a.remove();
+}
+// Retorna true se o download pode seguir na hora (já desbloqueado); senão
+// intercepta o clique, mostra o modal e guarda o download pra depois.
+function guardDownload(e,href,download){
+  if(!href)return false;
+  if(isUnlocked())return true;
+  e.preventDefault();
+  openLock(href,download);
+  return false;
+}
+lockFollowBtn.addEventListener('click',()=>{lockVerifyBtn.disabled=false;});
+lockVerifyBtn.addEventListener('click',()=>{
+  if(lockVerifyBtn.disabled)return;
+  unlock();
+  closeLock();
+  if(pendingDownload){triggerDownload(pendingDownload.href,pendingDownload.download);pendingDownload=null;}
+});
+lockClose.addEventListener('click',closeLock);
+lockOverlay.addEventListener('click',e=>{if(e.target===lockOverlay)closeLock();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!lockOverlay.hidden)closeLock();});
+dlBtn.addEventListener('click',e=>{
+  if(dlBtn.classList.contains('is-disabled')){e.preventDefault();return;}
+  guardDownload(e,dlBtn.href,dlBtn.download);
+});
+
 fetch('https://painel.rogeriomessdj.com.br/api/sets')
   .then(r=>r.json())
   .then(d=>{DATA=d;renderTabs();selectSection(0);})
@@ -1179,10 +1281,14 @@ function selectSection(i, fromClick){
 </div>`).join('');
   tlist.querySelectorAll('.trow').forEach(r=>{
     const j=+r.dataset.i;
-    r.addEventListener('click',()=>loadTrack(sec.tracks[j],true));
-    r.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();loadTrack(sec.tracks[j],true);}});
+    const track=sec.tracks[j];
+    r.addEventListener('click',()=>loadTrack(track,true));
+    r.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();loadTrack(track,true);}});
     const dl=r.querySelector('.trow-dl');
-    dl.addEventListener('click',e=>e.stopPropagation());
+    dl.addEventListener('click',e=>{
+      e.stopPropagation();
+      guardDownload(e,track.src,esc(track.title)+'.mp3');
+    });
     dl.addEventListener('keydown',e=>e.stopPropagation());
   });
   if(sec.tracks && sec.tracks.length > 0 && !playing){
