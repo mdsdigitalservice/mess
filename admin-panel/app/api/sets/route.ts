@@ -66,7 +66,10 @@ export async function GET() {
         tags: extractTags(t.title),
         bpm: t.bpm,
         dur: t.duration || '',
-        src: t.src,
+        // Uploads feitos pelo painel salvam caminho relativo (/media/arquivo.mp3),
+        // servido pela própria rota /media do painel — precisa virar URL absoluta
+        // pro site público (outro domínio) não tentar resolver contra o próprio host.
+        src: t.src?.startsWith('/media/') ? `https://painel.rogeriomessdj.com.br${t.src}` : t.src,
       })),
     };
   });
