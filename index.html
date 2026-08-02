@@ -1189,6 +1189,9 @@ const lockClose=document.getElementById('lockClose');
 const lockFollowBtn=document.getElementById('lockFollowBtn');
 const lockVerifyBtn=document.getElementById('lockVerifyBtn');
 let pendingDownload=null;
+let lockTimer=null;
+const LOCK_VERIFY_LABEL='Já segui — verificar e baixar';
+const LOCK_WAIT_SECS=10;
 
 function isUnlocked(){
   try{return localStorage.getItem(LOCK_KEY)==='1';}catch{return false;}
@@ -1196,9 +1199,36 @@ function isUnlocked(){
 function unlock(){
   try{localStorage.setItem(LOCK_KEY,'1');}catch{}
 }
+function stopLockTimer(){
+  if(lockTimer){clearInterval(lockTimer);lockTimer=null;}
+}
+function resetVerifyBtn(){
+  stopLockTimer();
+  lockVerifyBtn.disabled=true;
+  lockVerifyBtn.textContent=LOCK_VERIFY_LABEL;
+}
+// Não dá pra confirmar de verdade que a pessoa seguiu (a API do Instagram
+// não expõe isso pra terceiros) — essa espera é só fricção anti-clique-reflexo,
+// não verificação real.
+function startLockTimer(){
+  if(lockTimer)return; // já em contagem, não reinicia
+  let left=LOCK_WAIT_SECS;
+  lockVerifyBtn.disabled=true;
+  lockVerifyBtn.textContent=`Aguarde ${left}s…`;
+  lockTimer=setInterval(()=>{
+    left--;
+    if(left<=0){
+      stopLockTimer();
+      lockVerifyBtn.disabled=false;
+      lockVerifyBtn.textContent=LOCK_VERIFY_LABEL;
+    }else{
+      lockVerifyBtn.textContent=`Aguarde ${left}s…`;
+    }
+  },1000);
+}
 function openLock(href,download){
   pendingDownload={href,download};
-  lockVerifyBtn.disabled=true;
+  resetVerifyBtn();
   lockOverlay.hidden=false;
   requestAnimationFrame(()=>{lockOverlay.classList.add('is-open');lockFollowBtn.focus();});
   document.body.style.overflow='hidden';
@@ -1206,6 +1236,7 @@ function openLock(href,download){
 function closeLock(){
   lockOverlay.classList.remove('is-open');
   document.body.style.overflow='';
+  stopLockTimer();
   setTimeout(()=>{lockOverlay.hidden=true;},300);
 }
 function triggerDownload(href,download){
@@ -1222,7 +1253,7 @@ function guardDownload(e,href,download){
   openLock(href,download);
   return false;
 }
-lockFollowBtn.addEventListener('click',()=>{lockVerifyBtn.disabled=false;});
+lockFollowBtn.addEventListener('click',startLockTimer);
 lockVerifyBtn.addEventListener('click',()=>{
   if(lockVerifyBtn.disabled)return;
   unlock();
