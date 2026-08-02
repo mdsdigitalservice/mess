@@ -23,6 +23,7 @@ function LoginForm() {
   const searchParams = useSearchParams();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
@@ -115,7 +116,7 @@ function LoginForm() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 bg-bg0/80"
         />
-        <div className="relative w-full max-w-sm">
+        <div className="relative w-full max-w-sm rounded-2xl border border-white/10 bg-black/50 p-8 shadow-2xl backdrop-blur-xl">
           <div className="mb-8 flex items-center gap-2.5 lg:hidden">
             <img src="/logo-mess.png" alt="DJ Rogério Mess" className="h-5 w-auto" />
             <span className="h-2 w-2 rounded-full bg-accent shadow-glow-sm" />
@@ -142,24 +143,51 @@ function LoginForm() {
                 required
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="w-full rounded-lg border border-bg3 bg-bg2 px-3.5 py-2.5 text-sm text-fg outline-none transition focus:border-accent focus:ring-1 focus:ring-accent"
+                className="w-full rounded-lg border border-white/15 bg-white/5 backdrop-blur-md px-3.5 py-2.5 text-sm text-fg placeholder:text-fg-3 outline-none transition focus:border-accent focus:bg-white/10 focus:ring-1 focus:ring-accent shadow-inner"
               />
             </div>
 
             <div>
-              <label htmlFor="password" className="mb-1.5 block font-mono text-[.68rem] uppercase tracking-wider text-fg-3">
-                Senha
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                autoComplete="current-password"
-                required
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full rounded-lg border border-bg3 bg-bg2 px-3.5 py-2.5 text-sm text-fg outline-none transition focus:border-accent focus:ring-1 focus:ring-accent"
-              />
+              <div className="mb-1.5 flex items-center justify-between">
+                <label htmlFor="password" className="font-mono text-[.68rem] uppercase tracking-wider text-fg-3">
+                  Senha
+                </label>
+                <a
+                  href="mailto:contato@mdsdigital.com.br?subject=Recupera%C3%A7%C3%A3o%20de%20Senha%20-%20Painel%20Rog%C3%A9rio%20Mess"
+                  className="font-mono text-[.68rem] text-fg-3 hover:text-accent transition underline decoration-bg3"
+                >
+                  Esqueceu a senha?
+                </a>
+              </div>
+              <div className="relative">
+                <input
+                  id="password"
+                  name="password"
+                  type={showPassword ? 'text' : 'password'}
+                  autoComplete="current-password"
+                  required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="w-full rounded-lg border border-white/15 bg-white/5 backdrop-blur-md px-3.5 py-2.5 pr-10 text-sm text-fg placeholder:text-fg-3 outline-none transition focus:border-accent focus:bg-white/10 focus:ring-1 focus:ring-accent shadow-inner"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-fg-3 hover:text-fg transition p-1 focus:outline-none"
+                  aria-label={showPassword ? 'Ocultar senha' : 'Ver senha'}
+                >
+                  {showPassword ? (
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                    </svg>
+                  ) : (
+                    <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                  )}
+                </button>
+              </div>
             </div>
 
             {error && (
