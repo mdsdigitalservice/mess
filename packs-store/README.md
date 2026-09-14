@@ -13,9 +13,9 @@ Aplicação independente para a rota `https://rogeriomessdj.com.br/packs`, hospe
 
 1. Importe este diretório como um projeto Vercel com **Root Directory** `packs-store`.
 2. Instale Neon no projeto e use a variável `DATABASE_URL`.
-3. Crie um bucket R2 privado chamado `rogerio-mess-packs` e um token limitado a leitura/gravação nesse bucket.
+3. Crie um bucket R2 privado e um token limitado a leitura/gravação somente nesse bucket.
 4. Copie as chaves de `.env.example` para Development, Preview e Production na Vercel.
-5. Gere os hashes dos dois acessos com:
+5. Para configuração direta pela Vercel, defina `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `PACKS_USERNAME` e `PACKS_PASSWORD` como variáveis sensíveis. Como alternativa, gere hashes dos dois acessos e use `ADMIN_PASSWORD_HASH` e `PACKS_PASSWORD_HASH`:
 
 ```bash
 npm run create-admin -- administrador senha-forte admin

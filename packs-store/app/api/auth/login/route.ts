@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { z } from 'zod';
-import { verifyPassword } from '@/lib/password';
+import { verifyPassword, verifyPlainPassword } from '@/lib/password';
 import { createSession, SESSION_COOKIE } from '@/lib/session';
 import { allowAction } from '@/lib/db';
 
@@ -17,10 +17,15 @@ export async function POST(request: Request) {
   if (!parsed.success) return NextResponse.json({ error: 'Informe usuário e senha.' }, { status: 400 });
   const { username, password } = parsed.data;
   const credentials = [
-    [process.env.ADMIN_USERNAME, process.env.ADMIN_PASSWORD_HASH],
-    [process.env.PACKS_USERNAME, process.env.PACKS_PASSWORD_HASH],
+    [process.env.ADMIN_USERNAME, process.env.ADMIN_PASSWORD_HASH, process.env.ADMIN_PASSWORD],
+    [process.env.PACKS_USERNAME, process.env.PACKS_PASSWORD_HASH, process.env.PACKS_PASSWORD],
   ];
-  const valid = credentials.some(([user, hash]) => Boolean(user && hash && username === user && verifyPassword(password, hash!)));
+  const valid = credentials.some(([user, hash, plain]) => Boolean(
+    user && username === user && (
+      (hash && verifyPassword(password, hash)) ||
+      (plain && verifyPlainPassword(password, plain))
+    )
+  ));
   if (!valid) return NextResponse.json({ error: 'Usuário ou senha inválidos.' }, { status: 401 });
   const response = NextResponse.json({ ok: true });
   response.cookies.set(SESSION_COOKIE, await createSession(username), {

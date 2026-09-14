@@ -15,3 +15,9 @@ export function verifyPassword(password: string, encoded: string) {
     return false;
   }
 }
+
+export function verifyPlainPassword(password: string, expected: string) {
+  const actualHash = crypto.createHash('sha256').update(password, 'utf8').digest();
+  const expectedHash = crypto.createHash('sha256').update(expected, 'utf8').digest();
+  return crypto.timingSafeEqual(actualHash, expectedHash);
+}
