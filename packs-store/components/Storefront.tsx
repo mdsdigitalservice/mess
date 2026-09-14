@@ -147,7 +147,7 @@ export default function Storefront() {
               <span className="pack-index">{String(index + 1).padStart(2, '0')}</span><span className="pack-label">PACK DIGITAL</span>
               {pack.preview_url && <button className="play" onClick={() => play(pack)} aria-label={`${playing === pack.id ? 'Pausar' : 'Ouvir'} prévia`}>{playing === pack.id ? 'Ⅱ' : '▶'}</button>}
             </div>
-            <div className="pack-info"><p className="pack-meta">{pack.available ? (pack.tracks_count ? `${pack.tracks_count} faixas` : 'Seleção exclusiva') : 'Catálogo preparado'}</p><h3>{pack.title}</h3><p>{pack.description || 'Curadoria exclusiva pronta para download.'}</p><div className="pack-buy"><div className="pack-price">{pack.original_price_cents && <s>{money.format(pack.original_price_cents / 100)}</s>}<strong>{money.format(pack.price_cents / 100)}</strong></div><button className="primary" disabled={!pack.available} onClick={() => pack.available && setSelected(pack)}>{pack.available ? 'Comprar com PIX' : 'Disponível em breve'}</button></div></div>
+            <div className="pack-info"><p className="pack-meta">{pack.tracks_count ? `${pack.tracks_count} faixas` : 'Seleção exclusiva'}</p><h3>{pack.title}</h3><p>{pack.description || 'Curadoria exclusiva pronta para download.'}</p><div className="pack-buy"><div className="pack-price">{pack.original_price_cents && <s>{money.format(pack.original_price_cents / 100)}</s>}<strong>{money.format(pack.price_cents / 100)}</strong></div><button className="primary" disabled={!pack.available} onClick={() => pack.available && setSelected(pack)}>{pack.available ? 'Comprar com PIX' : 'Disponível em breve'}</button></div></div>
           </article>)}
         </div>
       </section>
