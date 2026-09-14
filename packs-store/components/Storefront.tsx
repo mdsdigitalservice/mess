@@ -4,11 +4,79 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { BASE_PATH } from '@/lib/store';
 
-type PublicPack = { id: string; title: string; description: string; price_cents: number; tracks_count: number; cover_url: string | null; preview_url: string | null };
+type PublicPack = { id: string; title: string; description: string; price_cents: number; original_price_cents?: number; tracks_count: number; cover_url: string | null; preview_url: string | null; available?: boolean };
 type Store = { packs: PublicPack[]; pix: { key: string; beneficiary: string; city: string }; whatsapp: string };
 type OrderState = { status: 'pending'|'approved'|'rejected'; pack_title: string; price_cents: number; remaining_downloads: number; download_url: string | null };
 
 const money = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' });
+
+const packTemplates: PublicPack[] = [
+  {
+    id: 'template-anos-80',
+    title: 'PACK ESPECIAL ANOS 80',
+    description: 'Uma seleção especial com grandes músicas dos anos 80 para DJs, festas e eventos nostálgicos.',
+    price_cents: 10000,
+    tracks_count: 0,
+    cover_url: null,
+    preview_url: null,
+    available: false,
+  },
+  {
+    id: 'template-anos-90',
+    title: 'PACK ESPECIAL ANOS 90',
+    description: 'Hits marcantes dos anos 90, selecionados para festas, eventos e pistas cheias de nostalgia.',
+    price_cents: 10000,
+    tracks_count: 0,
+    cover_url: null,
+    preview_url: null,
+    available: false,
+  },
+  {
+    id: 'template-lives',
+    title: 'PACK DAS LIVES',
+    description: 'Coleção especial com seleções inspiradas nos melhores sets e momentos das lives.',
+    price_cents: 10000,
+    tracks_count: 0,
+    cover_url: null,
+    preview_url: null,
+    available: false,
+  },
+  {
+    id: 'template-dance-nacional',
+    title: 'PACK ESPECIAL DANCE NACIONAL DAS ANTIGAS',
+    description: 'Dance nacional das antigas para quem curte os grandes sucessos brasileiros que marcaram época.',
+    price_cents: 10000,
+    tracks_count: 0,
+    cover_url: null,
+    preview_url: null,
+    available: false,
+  },
+  {
+    id: 'template-2008-2012',
+    title: 'PACK ESPECIAL 2008 A 2012',
+    description: 'Uma seleção especial de 2008 a 2012 com os maiores sucessos e batidas que dominaram as pistas.',
+    original_price_cents: 30000,
+    price_cents: 15000,
+    tracks_count: 0,
+    cover_url: null,
+    preview_url: null,
+    available: false,
+  },
+  {
+    id: 'template-classicos-som-automotivo',
+    title: 'PACK CLÁSSICOS DO SOM AUTOMOTIVO',
+    description: 'Clássicos selecionados para colecionadores, DJs e fãs da melhor fase do som automotivo.',
+    price_cents: 10000,
+    tracks_count: 0,
+    cover_url: null,
+    preview_url: null,
+    available: false,
+  },
+];
+
+function normalizedTitle(title: string) {
+  return title.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+}
 
 export default function Storefront() {
   const [store, setStore] = useState<Store | null>(null);
@@ -42,6 +110,11 @@ export default function Storefront() {
     audio.current.play().then(() => setPlaying(pack.id)).catch(() => setPlaying(''));
   }
 
+  const catalogPacks = store ? [
+    ...store.packs.map((pack) => ({ ...pack, available: true })),
+    ...packTemplates.filter((template) => !store.packs.some((pack) => normalizedTitle(pack.title) === normalizedTitle(template.title))),
+  ] : [];
+
   return <>
     <header className="site-nav">
       <a href="https://rogeriomessdj.com.br" className="brand"><Image src={`${BASE_PATH}/assets/logo-mess-white.png`} width={400} height={72} alt="DJ Rogério Mess" priority /></a>
@@ -55,7 +128,7 @@ export default function Storefront() {
         <div className="hero-content reveal">
           <p className="kicker"><span /> Curadoria profissional para DJs</p>
           <h1>Packs que fazem<br />a pista <em>responder.</em></h1>
-          <p className="hero-copy">Seleções exclusivas, organizadas e prontas para tocar. Escolha seu pack, pague por PIX e receba o download após a confirmação.</p>
+          <p className="hero-copy">Os melhores acervos musicais para DJs, festas e som automotivo. Anos 80, 90, 2000, Flashback, Eurodance e muito mais!</p>
           <div className="hero-actions"><a className="primary" href="#packs">Explorar packs</a><a className="ghost" href="#como-funciona">Como funciona</a></div>
         </div>
         <div className="hero-stats">
@@ -64,18 +137,17 @@ export default function Storefront() {
       </section>
 
       <section className="catalog-section" id="packs">
-        <div className="section-heading"><div><p className="kicker">Coleção disponível</p><h2>Escolha sua próxima <em>arma de pista.</em></h2></div><span className="catalog-count">{store ? `${store.packs.length} PACK${store.packs.length === 1 ? '' : 'S'}` : 'CARREGANDO'}</span></div>
+        <div className="section-heading"><div><p className="kicker">Coleção disponível</p><h2>Escolha sua próxima <em>arma de pista.</em></h2></div><span className="catalog-count">{store ? `${catalogPacks.length} PACK${catalogPacks.length === 1 ? '' : 'S'}` : 'CARREGANDO'}</span></div>
         <div className="pack-grid">
           {error && <div className="empty-state">{error}</div>}
           {!store && !error && [1,2,3].map((item) => <div className="pack-card skeleton" key={item} />)}
-          {store?.packs.length === 0 && <div className="empty-state">Novos packs chegando. Acompanhe o Rogério no Instagram.</div>}
-          {store?.packs.map((pack, index) => <article className="pack-card" key={pack.id}>
+          {catalogPacks.map((pack, index) => <article className={`pack-card${pack.available ? '' : ' pack-card-soon'}`} key={pack.id}>
             <div className="pack-cover">
               {pack.cover_url ? <Image src={pack.cover_url} alt={`Capa do ${pack.title}`} fill sizes="(max-width: 560px) 100vw, (max-width: 820px) 50vw, 33vw" unoptimized /> : <div className="cover-fallback"><Image src={`${BASE_PATH}/assets/logo-mess-white.png`} width={400} height={72} alt="" /></div>}
               <span className="pack-index">{String(index + 1).padStart(2, '0')}</span><span className="pack-label">PACK DIGITAL</span>
               {pack.preview_url && <button className="play" onClick={() => play(pack)} aria-label={`${playing === pack.id ? 'Pausar' : 'Ouvir'} prévia`}>{playing === pack.id ? 'Ⅱ' : '▶'}</button>}
             </div>
-            <div className="pack-info"><p className="pack-meta">{pack.tracks_count ? `${pack.tracks_count} faixas` : 'Seleção exclusiva'}</p><h3>{pack.title}</h3><p>{pack.description || 'Curadoria exclusiva pronta para download.'}</p><div className="pack-buy"><strong>{money.format(pack.price_cents / 100)}</strong><button className="primary" onClick={() => setSelected(pack)}>Comprar com PIX</button></div></div>
+            <div className="pack-info"><p className="pack-meta">{pack.available ? (pack.tracks_count ? `${pack.tracks_count} faixas` : 'Seleção exclusiva') : 'Catálogo preparado'}</p><h3>{pack.title}</h3><p>{pack.description || 'Curadoria exclusiva pronta para download.'}</p><div className="pack-buy"><div className="pack-price">{pack.original_price_cents && <s>{money.format(pack.original_price_cents / 100)}</s>}<strong>{money.format(pack.price_cents / 100)}</strong></div><button className="primary" disabled={!pack.available} onClick={() => pack.available && setSelected(pack)}>{pack.available ? 'Comprar com PIX' : 'Disponível em breve'}</button></div></div>
           </article>)}
         </div>
       </section>
@@ -86,6 +158,16 @@ export default function Storefront() {
           <article><span>01</span><h3>Escolha o pack</h3><p>Veja os detalhes, escute a prévia e escolha a seleção certa para o seu set.</p></article>
           <article><span>02</span><h3>Faça o PIX</h3><p>Use a chave exibida na compra e envie seu comprovante com segurança.</p></article>
           <article><span>03</span><h3>Receba o acesso</h3><p>Após a aprovação, o download protegido aparece no acompanhamento do pedido.</p></article>
+        </div>
+      </section>
+
+      <section className="guarantee-section" aria-labelledby="garantia-title">
+        <div className="guarantee-number" aria-hidden="true">7</div>
+        <div className="guarantee-copy">
+          <p className="kicker">Compra sem risco</p>
+          <h2 id="garantia-title">Garantia de <em>7 dias.</em></h2>
+          <p>Adquira qualquer pack e teste por 7 dias. Se não gostar, devolvemos 100% do seu dinheiro, sem complicação.</p>
+          <div className="guarantee-points"><span>💳 Pagamento seguro via PIX</span><span>🎵 Download após aprovação</span><span>🔒 Seus dados protegidos</span></div>
         </div>
       </section>
 
