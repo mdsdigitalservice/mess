@@ -161,16 +161,6 @@ export default function Storefront() {
         </div>
       </section>
 
-      <section className="guarantee-section" aria-labelledby="garantia-title">
-        <div className="guarantee-number" aria-hidden="true">7</div>
-        <div className="guarantee-copy">
-          <p className="kicker">Compra sem risco</p>
-          <h2 id="garantia-title">Garantia de <em>7 dias.</em></h2>
-          <p>Adquira qualquer pack e teste por 7 dias. Se não gostar, devolvemos 100% do seu dinheiro, sem complicação.</p>
-          <div className="guarantee-points"><span>💳 Pagamento seguro via PIX</span><span>🎵 Download após aprovação</span><span>🔒 Seus dados protegidos</span></div>
-        </div>
-      </section>
-
       <section className="final-cta"><p className="kicker">DJ Rogério Mess</p><h2>Sua próxima pista<br />começa <em>aqui.</em></h2><a className="primary" href="#packs">Ver todos os packs</a></section>
     </main>
 
