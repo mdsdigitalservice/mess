@@ -3,28 +3,15 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
 
 
-/* Catálogo editorial e garantia */
+/* Catálogo editorial */
 .pack-card-soon{position:relative}
 .pack-card-soon .pack-cover,.pack-card-soon .pack-info{opacity:.82}
 .pack-card-soon:hover{transform:none}
 .pack-price{display:flex;align-items:flex-start;flex-direction:column;gap:2px}
 .pack-price s{color:var(--fg3);font:500 .74rem var(--mono)}
 .pack-buy .primary:disabled{border-color:var(--line2);background:var(--soft);color:var(--fg3);cursor:not-allowed;box-shadow:none}
-.guarantee-section{display:grid;grid-template-columns:minmax(180px,320px) 1fr;align-items:center;gap:clamp(36px,7vw,110px);width:min(1180px,calc(100% - 40px));margin:0 auto;padding:110px 0;border-top:1px solid var(--line)}
-.guarantee-number{display:grid;aspect-ratio:1;place-items:center;border:1px solid rgba(227,31,37,.45);border-radius:50%;background:radial-gradient(circle,rgba(227,31,37,.22),rgba(227,31,37,.03) 58%,transparent 60%);color:var(--red);font:700 clamp(7rem,16vw,13rem)/1 var(--display);text-shadow:0 0 50px rgba(227,31,37,.28)}
-.guarantee-copy h2{margin:0;font-size:clamp(2.8rem,6vw,6rem);line-height:.9;text-transform:uppercase}
-.guarantee-copy>p:not(.kicker){max-width:700px;margin:24px 0 0;color:var(--fg2);font-size:clamp(1rem,1.5vw,1.2rem);line-height:1.65}
-.guarantee-points{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-.guarantee-points span{padding:12px 14px;border:1px solid var(--line);border-radius:999px;background:var(--panel);color:var(--fg2);font:600 .68rem var(--mono);letter-spacing:.04em}
 
-@media(max-width:820px){
-  .guarantee-section{grid-template-columns:1fr;padding:80px 0}
-  .guarantee-number{width:min(260px,72vw)}
-}
 @media(max-width:560px){
   .pack-buy{align-items:stretch;flex-direction:column}
   .pack-buy .primary{width:100%}
-  .guarantee-section{width:calc(100% - 24px);padding:75px 0}
-  .guarantee-points{align-items:stretch;flex-direction:column}
-  .guarantee-points span{border-radius:12px}
 }
