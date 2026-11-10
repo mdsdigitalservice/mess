@@ -2,7 +2,9 @@ node_modules/
 .overclock-app/
 *.log
 skills/
-.claude/
+.claude/*
+!.claude/skills/
+!.claude/agents/
 
 # segredo real do bridge de upload — só o .example.php é versionado
 cpanel-bridge/upload-secret.php
